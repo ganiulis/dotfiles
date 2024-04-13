@@ -2,3 +2,4 @@
 !/.config
 /.config/*
 !/.config/fish/
+!/.config/nvim/

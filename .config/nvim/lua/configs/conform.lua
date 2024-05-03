@@ -4,6 +4,7 @@ local options = {
     go = { "gofumpt" },
     css = { "prettier" },
     html = { "prettier" },
+    markdown = { "prettier" },
   },
 
   format_on_save = {

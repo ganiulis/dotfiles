@@ -24,7 +24,7 @@ return {
         "lua-language-server",
         "stylua",
         "gopls",
-        "prettier",
+        "prettier"
       },
     },
   },
@@ -37,6 +37,7 @@ return {
         "vimdoc",
         "html",
         "css",
+        "go"
       },
     },
   },

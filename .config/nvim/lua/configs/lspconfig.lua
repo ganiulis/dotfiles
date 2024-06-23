@@ -24,6 +24,11 @@ lspconfig.gopls.setup {
         parameterNames = true,
         rangeVariableTypes = true,
       },
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
     },
   },
 }

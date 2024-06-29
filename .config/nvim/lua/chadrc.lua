@@ -1,6 +1,6 @@
 return {
   ui = {
-    theme = "doomchad",
+    theme = "mito-laser",
     hl_override = {
       Comment = { italic = true },
       ["@comment"] = { italic = true },

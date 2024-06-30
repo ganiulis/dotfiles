@@ -1,7 +1,7 @@
 local lspconfig = require "lspconfig"
 local nvchad_lspconfig = require "nvchad.configs.lspconfig"
 
-for _, lsp in ipairs { "html", "cssls" } do
+for _, lsp in ipairs { "html", "marksman" } do
   lspconfig[lsp].setup {
     on_attach = nvchad_lspconfig.on_attach,
     on_init = nvchad_lspconfig.on_init,

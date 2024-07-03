@@ -25,6 +25,7 @@ return {
         "stylua",
         "gopls",
         "prettier",
+        "markdownlint",
       },
     },
   },
@@ -84,5 +85,9 @@ return {
     "lukas-reineke/headlines.nvim",
     dependencies = "nvim-treesitter/nvim-treesitter",
     config = true,
+  },
+  {
+    "nvim-pack/nvim-spectre",
+    dependencies = "nvim-lua/plenary.nvim",
   },
 }

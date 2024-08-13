@@ -13,4 +13,8 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
   desc = "Search on current file",
 })
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+map("n", "<leader>gp", function()
+  vim.cmd [[normal :!bash -c "git push"<CR><CR>]]
+end, {
+  desc = "git push",
+})

@@ -14,7 +14,9 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 })
 
 map("n", "<leader>gp", function()
-  vim.cmd [[normal :!bash -c "git push"<CR><CR>]]
+  local api = vim.api
+  api.nvim_exec2("!git push", {})
 end, {
   desc = "git push",
+  silent = true,
 })

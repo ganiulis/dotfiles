@@ -3,6 +3,7 @@ local options = {
     lua = { "stylua" },
     go = { "gofumpt" },
     css = { "prettier" },
+    scss = { "prettier" },
     html = { "prettier" },
     markdown = { "prettier" },
   },

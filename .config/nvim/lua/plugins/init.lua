@@ -26,6 +26,7 @@ return {
         "gopls",
         "prettier",
         "markdownlint",
+        "cssls",
       },
     },
   },

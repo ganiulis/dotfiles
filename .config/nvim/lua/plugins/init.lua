@@ -18,7 +18,7 @@ return {
     opts = {},
   },
   {
-    "williamboman/mason.nvim",
+    "williamboman/mason.nvim", -- See https://github.com/williamboman/mason.nvim. LSP server package manager.
     opts = {
       ensure_installed = {
         "lua-language-server",
@@ -31,7 +31,7 @@ return {
     },
   },
   {
-    "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter", -- See https://github.com/nvim-treesitter/nvim-treesitter. Better syntax highlighting.
     opts = {
       ensure_installed = {
         "vim",
@@ -39,6 +39,8 @@ return {
         "vimdoc",
         "html",
         "go",
+        "yaml",
+        "typescript",
       },
     },
   },

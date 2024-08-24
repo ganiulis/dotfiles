@@ -27,6 +27,8 @@ return {
         "prettier",
         "markdownlint",
         "cssls",
+        "typescript-language-server",
+        "yaml-language-server",
       },
     },
   },

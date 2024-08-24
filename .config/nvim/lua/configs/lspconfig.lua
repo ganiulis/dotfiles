@@ -1,6 +1,8 @@
 local lspconfig = require "lspconfig"
 local nvchad_lspconfig = require "nvchad.configs.lspconfig"
 
+-- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md.
+
 for _, lsp in ipairs { "templ", "marksman", "bashls", "tsserver", "cssls" } do
   lspconfig[lsp].setup {
     on_attach = nvchad_lspconfig.on_attach,

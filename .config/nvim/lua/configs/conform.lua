@@ -1,3 +1,4 @@
+-- Formatters.
 -- See https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters.
 require("conform").setup {
   formatters_by_ft = {

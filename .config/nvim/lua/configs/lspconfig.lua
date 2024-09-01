@@ -1,3 +1,4 @@
+-- Language servers.
 local lspconfig = require "lspconfig"
 local nvchad_lspconfig = require "nvchad.configs.lspconfig"
 

@@ -18,7 +18,9 @@ return {
     opts = {},
   },
   {
-    "williamboman/mason.nvim", -- See https://github.com/williamboman/mason.nvim. LSP server package manager.
+    "williamboman/mason.nvim",
+    -- Linters.
+    -- See https://github.com/williamboman/mason.nvim. LSP server package manager.
     opts = {
       ensure_installed = {
         "lua-language-server",

@@ -4,13 +4,20 @@ local nvchad_lspconfig = require "nvchad.configs.lspconfig"
 
 -- LSPs with default configurations.
 -- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md.
-for _, lsp in ipairs { "marksman", "bashls", "yamlls", "rust_analyzer" } do
+for _, lsp in ipairs { "marksman", "bashls", "yamlls" } do
   lspconfig[lsp].setup {
     on_attach = nvchad_lspconfig.on_attach,
     on_init = nvchad_lspconfig.on_init,
     capabilities = nvchad_lspconfig.capabilities,
   }
 end
+
+lspconfig.rust_analyzer.setup {
+  on_attach = nvchad_lspconfig.on_attach,
+  on_init = nvchad_lspconfig.on_init,
+  capabilities = nvchad_lspconfig.capabilities,
+  settings = {},
+}
 
 -- TypeScript
 -- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver

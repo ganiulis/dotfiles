@@ -19,7 +19,7 @@ lspconfig.tsserver.setup {
   on_init = nvchad_lspconfig.on_init,
   capabilities = nvchad_lspconfig.capabilities,
   -- See https://github.com/typescript-language-server/typescript-language-server/blob/master/docs/configuration.md.
-  settings = {},
+  -- settings = {},
 }
 
 lspconfig.gopls.setup {

@@ -14,19 +14,13 @@ return {
     end,
   },
   {
-    "stevearc/conform.nvim",
-    opts = {},
-  },
-  {
     "williamboman/mason.nvim",
-    -- Linters and other LSPs which do not have configs.
     opts = {
       ensure_installed = {
         "lua-language-server",
         "markdownlint",
         "cssls",
         "yaml-language-server",
-        "typos",
       },
       automatic_installation = true,
     },

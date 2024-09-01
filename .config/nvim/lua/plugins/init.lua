@@ -19,29 +19,29 @@ return {
   },
   {
     "williamboman/mason.nvim",
-    -- Linters.
-    -- See https://github.com/williamboman/mason.nvim. LSP server package manager.
+    -- Linters and other LSPs which do not have configs.
     opts = {
       ensure_installed = {
         "lua-language-server",
-        "stylua",
-        "gopls",
-        "prettier",
         "markdownlint",
         "cssls",
-        "typescript-language-server",
         "yaml-language-server",
+        "typos",
       },
+      automatic_installation = true,
     },
   },
   {
-    "nvim-treesitter/nvim-treesitter", -- See https://github.com/nvim-treesitter/nvim-treesitter. Better syntax highlighting.
+    -- Better syntax highlighting.
+    -- See https://github.com/nvim-treesitter/nvim-treesitter.
+    "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
         "vim",
         "lua",
         "vimdoc",
         "html",
+        "rust",
         "go",
         "yaml",
         "typescript",

@@ -10,8 +10,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.filetype.add { extension = { templ = "templ" } }
-
 require("lazy").setup({
   {
     "NvChad/NvChad",

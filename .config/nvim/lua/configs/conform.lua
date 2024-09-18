@@ -3,13 +3,14 @@
 require("conform").setup {
   formatters_by_ft = {
     lua = { "stylua" },
-    go = { "gofumpt", "goimports" },
+    go = { "gofumpt" },
     css = { "prettier" },
     scss = { "prettier" },
     html = { "prettier" },
     markdown = { "prettier", "markdownfmt" },
     rust = { "rustfmt" },
     typescript = { "prettier" },
+    yaml = { "yamlfmt" },
   },
   format_on_save = {
     timeout_ms = 800,

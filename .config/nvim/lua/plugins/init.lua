@@ -21,6 +21,7 @@ return {
         "markdownlint",
         "cssls",
         "yaml-language-server",
+        -- "helm-ls",
       },
       automatic_installation = true,
     },

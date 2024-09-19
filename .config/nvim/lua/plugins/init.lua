@@ -16,12 +16,11 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      ensure_installed = {
+      pkgs = {
         "lua-language-server",
         "markdownlint",
         "cssls",
         "yaml-language-server",
-        -- "helm-ls",
       },
       automatic_installation = true,
     },

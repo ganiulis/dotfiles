@@ -16,7 +16,7 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      pkgs = {
+      ensure_installed = {
         "lua-language-server",
         "markdownlint",
         "cssls",

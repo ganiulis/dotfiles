@@ -15,7 +15,7 @@
   "headlines.nvim": { "branch": "master", "commit": "bf17c96a836ea27c0a7a2650ba385a7783ed322e" },
   "hydra.nvim": { "branch": "main", "commit": "7f5341643107d05a8d7d4fdea00b29af28517380" },
   "indent-blankline.nvim": { "branch": "master", "commit": "18603eb949eba08300799f64027af11ef922283f" },
-  "lazy.nvim": { "branch": "main", "commit": "460e1cd8f24e364d54543a4b0e83f6f4ec1f65fb" },
+  "lazy.nvim": { "branch": "main", "commit": "077102c5bfc578693f12377846d427f49bc50076" },
   "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "multicursors.nvim": { "branch": "main", "commit": "562809aaf203b4c65482a75199166d360f2b9298" },

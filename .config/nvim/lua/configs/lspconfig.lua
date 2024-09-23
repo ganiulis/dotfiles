@@ -4,7 +4,7 @@ local nvchad_lspconfig = require "nvchad.configs.lspconfig"
 
 -- LSPs with default configurations.
 -- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md.
-for _, lsp in ipairs { "marksman", "bashls", "rust_analyzer" } do
+for _, lsp in ipairs { "marksman", "bashls", "rust_analyzer", "ts_ls" } do
   lspconfig[lsp].setup {
     on_attach = nvchad_lspconfig.on_attach,
     on_init = nvchad_lspconfig.on_init,

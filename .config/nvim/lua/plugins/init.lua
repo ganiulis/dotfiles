@@ -39,6 +39,7 @@ return {
         "go",
         "yaml",
         "typescript",
+        "javascript",
       },
     },
   },

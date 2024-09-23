@@ -3,5 +3,5 @@ function fish_prompt
 end
 
 function fish_right_prompt
-    echo -s (set_color $fish_color_param) (__kube_prompt)
+    echo -s (set_color $fish_color_param) (__kube_prompt) " " (set_color $fish_color_normal) (date +%T)
 end

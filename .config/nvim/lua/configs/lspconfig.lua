@@ -12,17 +12,6 @@ for _, lsp in ipairs { "marksman", "bashls", "rust_analyzer", "ts_ls" } do
   }
 end
 
--- See https://github.com/mrjosh/helm-ls?tab=readme-ov-file#nvim-lspconfig-setup.
--- lspconfig.helm_ls.setup {
---   settings = {
---     ["helm-ls"] = {
---       yamlls = {
---         path = "yaml-language-server",
---       },
---     },
---   },
--- }
-
 lspconfig.gopls.setup {
   on_attach = nvchad_lspconfig.on_attach,
   on_init = nvchad_lspconfig.on_init,

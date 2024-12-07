@@ -1,5 +1,5 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
-vim.g.mapleader = " "
+vim.g.mapleader = " " -- Leader key for actions—the space bar
 
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
@@ -9,6 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
+vim.opt.relativenumber = true -- Relative line numbers
 
 require("lazy").setup({
   {

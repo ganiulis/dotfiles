@@ -35,4 +35,4 @@ vim.schedule(function()
   require "mappings"
 end)
 
-require "lua.api"
+require "api.lua"

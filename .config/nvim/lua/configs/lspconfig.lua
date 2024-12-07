@@ -1,10 +1,13 @@
--- Language servers.
 local lspconfig = require "lspconfig"
 local nvchad_lspconfig = require "nvchad.configs.lspconfig"
 
--- LSPs with default configurations.
--- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md.
-for _, lsp in ipairs { "marksman", "bashls", "rust_analyzer", "ts_ls" } do
+-- For more languages servers see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md.
+for _, lsp in ipairs {
+  "marksman", -- Markdown LS
+  "bashls", -- Bash LS
+  "rust_analyzer", -- Rust LS
+  "ts_ls", -- TypeScript LS
+} do
   lspconfig[lsp].setup {
     on_attach = nvchad_lspconfig.on_attach,
     on_init = nvchad_lspconfig.on_init,

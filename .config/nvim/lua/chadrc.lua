@@ -8,9 +8,6 @@ local M = {}
 M.base46 = {
 	theme = 'chadracula-evondev',
 	theme_toggle = { 'chadracula-evondev', 'nord' },
-	nvdash = {
-		load_on_startup = true,
-	},
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },

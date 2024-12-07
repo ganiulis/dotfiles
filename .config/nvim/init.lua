@@ -20,7 +20,7 @@ require("lazy").setup({
     config = function()
       require "nvchad.options"
 
-      vim.o.cursorlineopt = "both" -- See https://neovim.io/doc/user/options.html#'cursorlineopt'.
+      vim.o.cursorlineopt = "both" -- See https://neovim.io/doc/user/options.html#'cursorlineopt'
     end,
   },
   {

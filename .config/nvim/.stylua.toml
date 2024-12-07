@@ -1,4 +1,4 @@
 # See https://github.com/JohnnyMorganz/StyLua
 quote_style = "AutoPreferSingle"
-space_after_function_names = "Always"
+# space_after_function_names = "Always"
 collapse_simple_statement = "Always"

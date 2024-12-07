@@ -18,7 +18,9 @@ require("lazy").setup({
     branch = "v2.5",
     import = "nvchad.plugins",
     config = function()
-      require "options"
+      require "nvchad.options"
+
+      vim.o.cursorlineopt = "both"
     end,
   },
   {

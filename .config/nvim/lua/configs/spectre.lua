@@ -1,13 +1,13 @@
 -- See https://github.com/nvim-pack/nvim-spectre/issues/249
-require("spectre").setup {
+require('spectre').setup({
   replace_engine = {
-    ["sed"] = {
-      cmd = "sed",
+    ['sed'] = {
+      cmd = 'sed',
       args = {
-        "-i",
-        "",
-        "-E",
+        '-i',
+        '',
+        '-E',
       },
     },
   },
-}
+})

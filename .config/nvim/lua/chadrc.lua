@@ -1,9 +1,9 @@
 return {
   ui = {
-    theme = "catppuccin",
+    theme = 'catppuccin',
     hl_override = {
       Comment = { italic = true },
-      ["@comment"] = { italic = true },
+      ['@comment'] = { italic = true },
     },
   },
 }

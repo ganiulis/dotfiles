@@ -20,3 +20,10 @@ end, {
 	desc = 'git push',
 	silent = true,
 })
+map('n', '<leader>gl', function()
+	local api = vim.api
+	api.nvim_exec2('!git pull', {})
+end, {
+	desc = 'git pull',
+	silent = true,
+})

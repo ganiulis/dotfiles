@@ -29,11 +29,11 @@ require("lazy").setup({
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
-for _, lsp in ipairs {
+for _, file in ipairs {
   "nvchad.autocmds",
   "settings",
 } do
-  require(lsp)
+  require(file)
 end
 
 vim.schedule(function()

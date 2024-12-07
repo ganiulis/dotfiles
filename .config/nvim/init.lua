@@ -1,3 +1,6 @@
+-- Lazy—package manager for Neovim
+-- Mason—language server protocol manager
+
 vim.g.base46_cache = vim.fn.stdpath('data') .. '/nvchad/base46/'
 vim.g.mapleader = ' ' -- Leader key for actions—the space bar
 

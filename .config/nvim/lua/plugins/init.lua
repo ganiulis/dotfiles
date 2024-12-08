@@ -85,10 +85,10 @@ return {
 			-- set({ 'n', 'v' }, '<right>', mc.prevCursor)
 
 			-- Delete the main cursor.
-			-- set({ 'n', 'v' }, '<leader>x', mc.deleteCursor)
+			-- set({ 'n', 'v' }, '<leader>cx', mc.deleteCursor)
 
 			-- Add and remove cursors with control + left click.
-			set('n', '<c-leftmouse>', mc.handleMouse)
+			-- set('n', '<A-LeftMouse>', mc.handleMouse)
 
 			-- Easy way to add and remove cursors using the main cursor.
 			-- set({ 'n', 'v' }, '<c-q>', mc.toggleCursor)
@@ -96,7 +96,7 @@ return {
 			-- Clone every cursor and disable the originals.
 			-- set({ 'n', 'v' }, '<leader><c-q>', mc.duplicateCursors)
 
-			set('n', '<esc>', function()
+			set('n', '<leader>l', function()
 				if not mc.cursorsEnabled() then
 					mc.enableCursors()
 				elseif mc.hasCursors() then
@@ -129,15 +129,6 @@ return {
 			-- Jumplist support
 			-- set({ 'v', 'n' }, '<c-i>', mc.jumpForward)
 			-- set({ 'v', 'n' }, '<c-o>', mc.jumpBackward)
-
-			-- Customize how cursors look.
-			local hl = vim.api.nvim_set_hl
-			hl(0, 'MultiCursorCursor', { link = 'Cursor' })
-			hl(0, 'MultiCursorVisual', { link = 'Visual' })
-			hl(0, 'MultiCursorSign', { link = 'SignColumn' })
-			hl(0, 'MultiCursorDisabledCursor', { link = 'Visual' })
-			hl(0, 'MultiCursorDisabledVisual', { link = 'Visual' })
-			hl(0, 'MultiCursorDisabledSign', { link = 'SignColumn' })
 		end,
 		lazy = false,
 	},

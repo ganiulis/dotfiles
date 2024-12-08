@@ -62,10 +62,10 @@ return {
 			local set = vim.keymap.set
 
 			-- Add or skip cursor above/below the main cursor.
-			set({ 'n', 'v' }, '<leader>k', function() mc.lineAddCursor(-1) end)
-			set({ 'n', 'v' }, '<leader>j', function() mc.lineAddCursor(1) end)
-			-- set({ 'n', 'v' }, '<leader><up>', function() mc.lineSkipCursor(-1) end)
-			-- set({ 'n', 'v' }, '<leader><down>', function() mc.lineSkipCursor(1) end)
+			set({ 'n', 'v' }, '<leader>K', function() mc.lineAddCursor(-1) end)
+			set({ 'n', 'v' }, '<leader>k', function() mc.lineSkipCursor(-1) end)
+			set({ 'n', 'v' }, '<leader>J', function() mc.lineAddCursor(1) end)
+			set({ 'n', 'v' }, '<leader>j', function() mc.lineSkipCursor(1) end)
 
 			-- Add or skip adding a new cursor by matching word/selection
 			-- set({ 'n', 'v' }, '<leader>n', function() mc.matchAddCursor(1) end)
@@ -81,11 +81,11 @@ return {
 			-- set('n', '<leader><right>', function() mc.skipCursor('w') end)
 
 			-- Rotate the main cursor.
-			-- set({ 'n', 'v' }, '<left>', mc.nextCursor)
-			-- set({ 'n', 'v' }, '<right>', mc.prevCursor)
+			set({ 'n', 'v' }, '<leader>L', mc.nextCursor)
+			set({ 'n', 'v' }, '<leader>H', mc.prevCursor)
 
 			-- Delete the main cursor.
-			-- set({ 'n', 'v' }, '<leader>cx', mc.deleteCursor)
+			set({ 'n', 'v' }, '<leader>X', mc.deleteCursor)
 
 			-- Add and remove cursors with control + left click.
 			-- set('n', '<A-LeftMouse>', mc.handleMouse)
@@ -96,7 +96,7 @@ return {
 			-- Clone every cursor and disable the originals.
 			-- set({ 'n', 'v' }, '<leader><c-q>', mc.duplicateCursors)
 
-			set('n', '<leader>l', function()
+			set('n', '<leader>C', function()
 				if not mc.cursorsEnabled() then
 					mc.enableCursors()
 				elseif mc.hasCursors() then

@@ -15,20 +15,7 @@ local option = vim.opt
 option.rtp:prepend(lazypath)
 option.relativenumber = true -- Relative line numbers
 
-require('lazy').setup({
-	{
-		'NvChad/NvChad',
-		lazy = false,
-		branch = 'v2.5',
-		import = 'nvchad.plugins',
-		config = function()
-			require('nvchad.options')
-
-			vim.o.cursorlineopt = 'both' -- See https://neovim.io/doc/user/options.html#'cursorlineopt'
-		end,
-	},
-	{ import = 'plugins' },
-}, require('configs.lazy'))
+require('lazy').setup({ import = 'plugins' }, require('configs.lazy'))
 
 local base46_cache = vim.g.base46_cache
 dofile(base46_cache .. 'defaults')

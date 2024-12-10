@@ -27,5 +27,3 @@ for _, file in ipairs({
 }) do
 	require(file)
 end
-
-vim.schedule(function() require('mappings') end)

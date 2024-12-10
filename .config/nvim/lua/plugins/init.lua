@@ -48,7 +48,7 @@ return {
 		},
 		event = { 'CmdlineEnter' },
 		ft = { 'go', 'gomod' },
-		lazy = false,
+		-- lazy = false,
 	},
 	{
 		'jake-stewart/multicursor.nvim',

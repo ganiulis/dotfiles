@@ -39,7 +39,7 @@ return {
 		end,
 	},
 	{
-		'williamboman/mason.nvim',
+		'williamboman/mason.nvim', -- mason.nvim is a language server protocol manager
 		opts = {
 			pkgs = {
 				'lua-language-server',

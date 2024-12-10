@@ -6,7 +6,7 @@ set('i', 'jk', '<ESC>', { desc = 'Escape insert more' })
 -- Git
 
 set('n', '<leader>gp', function() vim.api.nvim_exec2('!git push', {}) end, { desc = 'push changes', silent = true })
-set('n', '<leader>gp', function() vim.api.nvim_exec2('!git push', {}) end, { desc = 'push changes', silent = true })
+set('n', '<leader>gl', function() vim.api.nvim_exec2('!git pull', {}) end, { desc = 'pull changes', silent = true })
 set(
 	'n',
 	'<leader>gcn',

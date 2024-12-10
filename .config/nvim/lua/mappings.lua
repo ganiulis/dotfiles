@@ -5,14 +5,19 @@ set('i', 'jk', '<ESC>', { desc = 'Escape insert more' })
 
 -- Git
 
-set('n', '<leader>gp', function() vim.api.nvim_exec2('!git push', {}) end, { desc = 'push changes' })
-set('n', '<leader>gp', function() vim.api.nvim_exec2('!git push', {}) end, { desc = 'push changes' })
-set('n', '<leader>gcn', function() vim.api.nvim_exec2('!git commit -am "Add notes"', {}) end, { desc = 'commit notes' })
+set('n', '<leader>gp', function() vim.api.nvim_exec2('!git push', {}) end, { desc = 'push changes', silent = true })
+set('n', '<leader>gp', function() vim.api.nvim_exec2('!git push', {}) end, { desc = 'push changes', silent = true })
+set(
+	'n',
+	'<leader>gcn',
+	function() vim.api.nvim_exec2('!git commit -am "Add notes"', {}) end,
+	{ desc = 'commit notes', silent = true }
+)
 set(
 	'n',
 	'<leader>gcc',
 	function() vim.api.nvim_exec2('!git commit -am "Update configuration files"', {}) end,
-	{ desc = 'commit config' }
+	{ desc = 'commit config', silent = true }
 )
 
 -- Spectre

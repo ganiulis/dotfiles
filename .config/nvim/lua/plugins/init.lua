@@ -46,7 +46,6 @@ return {
 			'neovim/nvim-lspconfig',
 			'nvim-treesitter/nvim-treesitter',
 		},
-		config = function() require('go').setup() end,
 		event = { 'CmdlineEnter' },
 		ft = { 'go', 'gomod' },
 		lazy = false,
@@ -120,11 +119,9 @@ return {
 	{
 		'lukas-reineke/headlines.nvim',
 		dependencies = 'nvim-treesitter/nvim-treesitter',
-		config = true,
 	},
 	{
 		'nvim-pack/nvim-spectre',
 		dependencies = 'nvim-lua/plenary.nvim',
-		config = function() require('configs.spectre') end,
 	},
 }

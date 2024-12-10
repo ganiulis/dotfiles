@@ -3,7 +3,7 @@ local set = vim.keymap.set
 set('n', ';', ':', { desc = 'Enter command mode' })
 set('i', 'jk', '<ESC>', { desc = 'Escape insert more' })
 
--- Git
+-- Version control
 
 set('n', '<leader>gp', function() vim.api.nvim_exec2('!git push', {}) end, { desc = 'push changes', silent = true })
 set('n', '<leader>gl', function() vim.api.nvim_exec2('!git pull', {}) end, { desc = 'pull changes', silent = true })

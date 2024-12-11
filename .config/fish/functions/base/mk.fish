@@ -1,3 +1,3 @@
-function mk --wraps=minikube --description 'alias mk=minikube'
+function mk --wraps=minikube --description 'minikube'
   minikube $argv
 end

@@ -1,3 +1,3 @@
-function m --wraps=make --description 'alias m=make'
+function m --wraps=make --description 'make'
   make $argv
 end

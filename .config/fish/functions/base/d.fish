@@ -1,3 +1,3 @@
-function d --wraps=docker --description 'alias d=docker'
+function d --wraps=docker --description 'docker'
   docker $argv
 end

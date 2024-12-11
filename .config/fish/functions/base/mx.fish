@@ -1,3 +1,3 @@
-function mx --wraps='make exec' --description 'alias mx=make exec'
+function mx --wraps='make exec' --description 'make exec'
   make exec $argv
 end

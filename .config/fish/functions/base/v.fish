@@ -1,3 +1,3 @@
-function v --wraps=nvim --description 'alias v=nvim'
+function v --wraps=nvim --description 'open Neovim'
   nvim $argv
 end

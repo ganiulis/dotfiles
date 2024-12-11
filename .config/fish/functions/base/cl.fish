@@ -1,4 +1,4 @@
-function cl --wraps=clear --description 'alias cl=clear'
+function cl --wraps=clear --description 'clear terminal'
   clear $argv
         
 end

@@ -1,4 +1,4 @@
-function b --wraps=exit --description 'alias b=exit'
+function b --wraps=exit --description 'bye-bye'
   exit $argv
         
 end

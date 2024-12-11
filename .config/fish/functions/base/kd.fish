@@ -1,3 +1,3 @@
-function kd --wraps='kubectl describe' --description 'alias kd=kubectl describe'
+function kd --wraps='kubectl describe' --description 'kubectl describe'
   kubectl describe $argv
 end

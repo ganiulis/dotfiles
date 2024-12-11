@@ -1,4 +1,4 @@
-function s --wraps=sudo --description 'alias s=sudo'
+function s --wraps=sudo --description 'sudo'
   sudo $argv
         
 end

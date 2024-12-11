@@ -1,3 +1,3 @@
-function cv --description 'Change directory and open Neovim'
+function cv --description 'open Neovim in directory'
   cd $argv && nvim
 end

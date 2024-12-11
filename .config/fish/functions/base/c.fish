@@ -1,4 +1,4 @@
-function c --wraps=cd --description 'alias c=cd'
+function c --wraps=cd --description 'change directory'
   cd $argv
         
 end

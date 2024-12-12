@@ -1,4 +1,6 @@
 vim.g.base46_cache = vim.fn.stdpath('data') .. '/nvchad/base46/'
 vim.g.mapleader = ' '
-dofile(vim.g.base46_cache .. 'defaults')
-dofile(vim.g.base46_cache .. 'statusline')
+
+for _, file in ipairs({ 'defaults', 'statusline' }) do
+	dofile(vim.g.base46_cache .. file)
+end

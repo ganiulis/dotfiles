@@ -10,7 +10,6 @@ return {
 			'bashls', -- Bash LS
 			'rust_analyzer', -- Rust LS
 			'ts_ls', -- TypeScript LS
-			'lua_ls', -- Lua LS
 		}) do
 			lspconfig[lsp].setup({
 				on_attach = nvchad_lspconfig.on_attach,

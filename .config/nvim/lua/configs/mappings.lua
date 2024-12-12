@@ -1,5 +1,7 @@
 local set = vim.keymap.set
 
+-- Uncategorized mappings
+
 set('n', ';', ':', { desc = 'Enter command mode' })
 set('i', 'jk', '<ESC>', { desc = 'Escape insert more' })
 

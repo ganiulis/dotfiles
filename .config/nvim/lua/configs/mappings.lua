@@ -7,14 +7,14 @@ set('i', 'jk', '<ESC>', { desc = 'Escape insert more' })
 
 -- Version control
 
-set('n', '<leader>gp', function() vim.api.nvim_exec2('!git push', {}) end, { desc = 'push changes', silent = true })
-set('n', '<leader>gl', function() vim.api.nvim_exec2('!git pull', {}) end, { desc = 'pull changes', silent = true })
-set('n', '<leader>gcn', function()
+set('n', 'gp', function() vim.api.nvim_exec2('!git push', {}) end, { desc = 'push changes', silent = true })
+set('n', 'gl', function() vim.api.nvim_exec2('!git pull', {}) end, { desc = 'pull changes', silent = true })
+set('n', 'gcn', function()
 	for _, cmd in ipairs({ '!git add .', '!git commit -m "Add notes"', '!git push' }) do
 		vim.api.nvim_exec2(cmd, {})
 	end
 end, { desc = 'push note changes', silent = true })
-set('n', '<leader>gcc', function()
+set('n', 'gco', function()
 	for _, cmd in ipairs({ '!git add .', '!git commit -m "Update configuration files"', '!git push' }) do
 		vim.api.nvim_exec2(cmd, {})
 	end

@@ -12,6 +12,7 @@ return {
 			rust = { 'rustfmt' },
 			typescript = { 'prettier' },
 			yaml = { 'yamlfmt' },
+			python = { 'prettier' },
 		},
 		format_on_save = {
 			timeout_ms = 800,

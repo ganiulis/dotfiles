@@ -10,7 +10,7 @@ return {
 			'bashls',
 			'rust_analyzer',
 			'ts_ls',
-			'python',
+			'pyright',
 		}) do
 			lspconfig[lsp].setup({
 				on_attach = nvchad_lspconfig.on_attach,

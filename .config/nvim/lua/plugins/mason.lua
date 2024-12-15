@@ -6,6 +6,7 @@ return {
 			'markdownlint',
 			'cssls',
 			'yaml-language-server',
+			'pyright',
 		},
 		automatic_installation = true,
 	},

@@ -10,7 +10,6 @@ return {
 			'bashls',
 			'rust_analyzer',
 			'ts_ls',
-			'pyright',
 		}) do
 			lspconfig[lsp].setup({
 				on_attach = nvchad_lspconfig.on_attach,
@@ -18,6 +17,18 @@ return {
 				capabilities = nvchad_lspconfig.capabilities,
 			})
 		end
+
+		lspconfig.pyright.setup({
+			settings = {
+				python = {
+					analysis = {
+						autoSearchPaths = true,
+						diagnosticMode = 'openFilesOnly',
+						useLibraryCodeForTypes = true,
+					},
+				},
+			},
+		})
 
 		lspconfig.gopls.setup({
 			on_attach = nvchad_lspconfig.on_attach,

@@ -12,10 +12,10 @@ return {
 			rust = { 'rustfmt' },
 			typescript = { 'prettier' },
 			yaml = { 'yamlfmt' },
-			python = { 'prettier' },
+			python = { 'isort', 'black' },
 		},
 		format_on_save = {
-			timeout_ms = 800,
+			timeout_ms = 1600,
 			lsp_fallback = true,
 		},
 	},

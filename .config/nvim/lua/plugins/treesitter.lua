@@ -8,9 +8,9 @@ return {
 			'html',
 			'rust',
 			'go',
+			'python',
 			'yaml',
 			'typescript',
-			'javascript',
 		},
 	},
 }

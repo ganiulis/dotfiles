@@ -6,10 +6,11 @@ return {
 		local nvchad_lspconfig = require('nvchad.configs.lspconfig')
 
 		for _, lsp in ipairs({
-			'marksman', -- Markdown LS
-			'bashls', -- Bash LS
-			'rust_analyzer', -- Rust LS
-			'ts_ls', -- TypeScript LS
+			'marksman',
+			'bashls',
+			'rust_analyzer',
+			'ts_ls',
+			'python',
 		}) do
 			lspconfig[lsp].setup({
 				on_attach = nvchad_lspconfig.on_attach,

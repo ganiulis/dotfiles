@@ -1,11 +1,11 @@
 return {
 	'ray-x/go.nvim',
 	-- event = { 'CmdlineEnter' },
-	dependencies = {
-		'ray-x/guihua.lua',
-		'neovim/nvim-lspconfig',
-		'nvim-treesitter/nvim-treesitter',
-	},
+	-- dependencies = {
+	-- 	'ray-x/guihua.lua',
+	-- 	'neovim/nvim-lspconfig',
+	-- 	'nvim-treesitter/nvim-treesitter',
+	-- },
 	ft = { 'go', 'gomod' },
 	opts = {
 		-- goimports = 'gopls', -- if set to 'gopls' will use golsp format

@@ -12,6 +12,7 @@ return {
 				'rust_analyzer',
 				'ts_ls',
 				'pyright',
+				'lua_ls',
 			},
 			require('mason-lspconfig').setup_handlers({
 				function(server_name)

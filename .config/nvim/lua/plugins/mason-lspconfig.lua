@@ -1,5 +1,7 @@
 return {
 	'williamboman/mason-lspconfig.nvim',
+	event = 'BufWritePre',
+	lazy = false, -- Need to check if possible to lazy-load this config
 	config = function()
 		local lspconfig = require('lspconfig')
 		require('mason').setup()
@@ -52,5 +54,4 @@ return {
 
 		print('mason-lspconfig.nvim loaded')
 	end,
-	lazy = false, -- Need to check if possible to lazy-load this config
 }

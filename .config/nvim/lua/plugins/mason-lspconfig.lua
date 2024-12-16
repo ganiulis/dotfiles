@@ -5,6 +5,8 @@ return {
 		require('mason').setup({})
 		local nvchad_lspconfig = require('nvchad.configs.lspconfig')
 
+		nvchad_lspconfig.defaults()
+
 		require('mason-lspconfig').setup({
 			ensure_installed = {
 				'bashls',

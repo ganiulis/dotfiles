@@ -1,7 +1,6 @@
 return {
 	'williamboman/mason-lspconfig.nvim',
 	config = function()
-		print('loading mason config')
 		local lspconfig = require('lspconfig')
 		require('mason').setup({})
 		local nvchad_lspconfig = require('nvchad.configs.lspconfig')
@@ -47,6 +46,8 @@ return {
 				end,
 			}),
 		})
+
+		print('mason-lspconfig.nvim loaded')
 	end,
 	lazy = false, -- Need to check if possible to lazy-load this config
 }

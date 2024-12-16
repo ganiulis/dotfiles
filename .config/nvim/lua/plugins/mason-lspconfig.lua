@@ -2,7 +2,7 @@ return {
 	'williamboman/mason-lspconfig.nvim',
 	config = function()
 		local lspconfig = require('lspconfig')
-		require('mason').setup({})
+		require('mason').setup()
 		local nvchad_lspconfig = require('nvchad.configs.lspconfig')
 
 		nvchad_lspconfig.defaults()

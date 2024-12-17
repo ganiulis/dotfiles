@@ -1,3 +1,5 @@
+vim.schedule(function() require('nvchad.mappings') end)
+
 -- Mappings
 
 vim.keymap.set('n', ';', ':', { desc = 'Enter command mode' })

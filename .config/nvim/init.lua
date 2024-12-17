@@ -2,6 +2,8 @@
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.o.clipboard = 'unnamedplus'
+vim.opt.relativenumber = true
 vim.g.base46_cache = vim.fn.stdpath('data') .. '/nvchad/base46/'
 
 for _, file in ipairs({ 'defaults', 'statusline' }) do
@@ -11,8 +13,6 @@ end
 require('config.lazy')
 require('nvchad.autocmds')
 
-vim.o.clipboard = 'unnamedplus'
-vim.opt.relativenumber = true
 vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = function() require('nvim-tree.api').tree.open() end })
 
 require('config.mapping')

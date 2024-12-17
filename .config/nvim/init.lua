@@ -4,14 +4,12 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.o.clipboard = 'unnamedplus'
 vim.opt.relativenumber = true
-vim.g.base46_cache = vim.fn.stdpath('data') .. '/nvchad/base46/'
+vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = function() require('nvim-tree.api').tree.open() end })
 
+vim.g.base46_cache = vim.fn.stdpath('data') .. '/nvchad/base46/'
 dofile(vim.g.base46_cache .. 'defaults')
 dofile(vim.g.base46_cache .. 'statusline')
 
 require('config.lazy')
 require('nvchad.autocmds')
-
-vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = function() require('nvim-tree.api').tree.open() end })
-
 require('config.mapping')

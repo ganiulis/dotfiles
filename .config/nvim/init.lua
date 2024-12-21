@@ -1,6 +1,5 @@
--- See https://github.com/nvim-lua/kickstart.nvim/blob/4b31f8ef9e37f8a02739659a0a505927114c77af/init.lua
-require('config.nvim')
-require('config.NvChad')
+vim.g.base46_cache = vim.fn.stdpath('data') .. '/base46/'
 require('config.lazy')
-require('nvchad.autocmds')
-require('config.mapping')
+require('config.NvChad')
+require('config.nvim')
+vim.schedule(function() require('config.mapping') end)

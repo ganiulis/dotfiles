@@ -5,8 +5,8 @@
 ---@type ChadrcConfig
 return {
 	base46 = {
-		theme = 'onedark',
-		theme_toggle = { 'onedark', 'catppuccin' },
+		theme = 'everforest',
+		theme_toggle = { 'everforest', 'everforest_light' },
 		-- hl_override = {
 		-- Comment = { italic = true },
 		-- ['@comment'] = { italic = true },

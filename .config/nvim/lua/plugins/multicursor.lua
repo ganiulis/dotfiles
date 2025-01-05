@@ -7,16 +7,12 @@ return {
 
 		mc.setup()
 
-		-- Add or skip cursor above/below the main cursor.
 		vim.keymap.set({ 'n', 'v' }, '<A-k>', function() mc.lineAddCursor(-1) end)
 		vim.keymap.set({ 'n', 'v' }, '<A-K>', function() mc.lineSkipCursor(-1) end)
 		vim.keymap.set({ 'n', 'v' }, '<A-j>', function() mc.lineAddCursor(1) end)
 		vim.keymap.set({ 'n', 'v' }, '<A-J>', function() mc.lineSkipCursor(1) end)
-		-- Rotate the main cursor.
 		vim.keymap.set({ 'n', 'v' }, '<A-l>', mc.nextCursor)
-		-- Delete the main cursor.
 		vim.keymap.set({ 'n', 'v' }, '<A-x>', mc.clearCursors)
-		-- Add and remove cursors with control + left click.
 		vim.keymap.set('n', '<A-leftmouse>', mc.handleMouse)
 
 		-- Add or skip adding a new cursor by matching word/selection

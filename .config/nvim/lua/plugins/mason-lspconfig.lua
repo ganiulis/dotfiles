@@ -51,6 +51,7 @@ return {
 				'marksman',
 				'pyright',
 				'rust_analyzer',
+				'terraformls',
 				'ts_ls',
 			},
 			require('mason-lspconfig').setup_handlers({

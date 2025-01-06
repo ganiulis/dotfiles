@@ -10,6 +10,7 @@ return {
 			html = { 'prettier' },
 			markdown = { 'prettier', 'markdownfmt' },
 			rust = { 'rustfmt' },
+			terraform = { 'terraform_fmt' },
 			typescript = { 'prettier' },
 			yaml = { 'yamlfmt' },
 			python = { 'isort', 'black' },

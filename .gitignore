@@ -2,6 +2,7 @@
 !/.config
 /.config/*
 !/.config/fish/
+/.config/fish/conf.d/*
 /.config/fish/fish_variables
 /.config/fish/completions/*.fish
 /.config/fish/functions/*.fish

@@ -10,6 +10,7 @@ if test -d ~/.local/go
 end
 
 # Prints cow wisdom when possible
-if type -q cowsay and type -q fortune
+if type -q cowsay 
+  and type -q fortune
   command fortune | cowsay
 end

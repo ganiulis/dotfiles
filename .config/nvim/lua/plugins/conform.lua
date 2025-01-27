@@ -4,7 +4,7 @@ return {
 	opts = {
 		formatters_by_ft = {
 			lua = { 'stylua' },
-			go = { 'gofumpt' },
+			go = { 'gofumpt', 'goimports-reviser' },
 			css = { 'prettier' },
 			scss = { 'prettier' },
 			html = { 'prettier' },

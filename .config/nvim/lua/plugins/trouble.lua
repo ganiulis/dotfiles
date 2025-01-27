@@ -1,6 +1,9 @@
 return {
 	'folke/trouble.nvim',
-	opts = {}, -- TODO: This plugin is extensive and I should check what I can use to make my life easier
+	opts = {
+		auto_close = false, -- auto close when there are no items
+		auto_open = false, -- auto open when there are items
+	}, -- TODO: This plugin is extensive and I should check what I can use to make my life easier
 	cmd = 'Trouble',
 	keys = {
 		{

@@ -1,6 +1,6 @@
 return {
 	'folke/trouble.nvim',
-	opts = {},
+	opts = {}, -- TODO: This plugin is extensive and I should check what I can use to make my life easier
 	cmd = 'Trouble',
 	keys = {
 		{

@@ -50,7 +50,6 @@ return {
 				'lua_ls',
 				'marksman',
 				'pyright',
-				'rust_analyzer',
 				'terraformls',
 				'ts_ls',
 			},

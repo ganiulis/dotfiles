@@ -9,7 +9,6 @@ return {
 			'bashls',
 			'lua_ls',
 			'marksman',
-			'pyright',
 			'terraformls',
 			'ts_ls',
 		},

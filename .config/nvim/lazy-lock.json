@@ -27,10 +27,11 @@
   "nvim-lspconfig": { "branch": "master", "commit": "e5bf88e5ea1c4cea5ea96b1e970cb264f7a401a1" },
   "nvim-spectre": { "branch": "master", "commit": "ddd7383e856a7c939cb4f5143278fe041bbb8cb9" },
   "nvim-tree.lua": { "branch": "master", "commit": "d05881f65f0a653db8d830ccc4d2e07d6a720628" },
-  "nvim-treesitter": { "branch": "master", "commit": "d34e62afd3e483fe0fa2f24b6323f3bb1d35ddcc" },
+  "nvim-treesitter": { "branch": "master", "commit": "61a385d74f822dcd1d223f42f1267d1317aaa2d0" },
   "nvim-web-devicons": { "branch": "master", "commit": "1c9136332840edee0c593f2f4f89598c8ed97f5f" },
   "plenary.nvim": { "branch": "master", "commit": "3707cdb1e43f5cea73afb6037e6494e7ce847a66" },
   "telescope.nvim": { "branch": "master", "commit": "415af52339215926d705cccc08145f3782c4d132" },
+  "trouble.nvim": { "branch": "main", "commit": "50481f414bd3c1a40122c1d759d7e424d5fafe84" },
   "ui": { "branch": "v3.0", "commit": "23cc288deaeafe6641f0092252dee25136616a47" },
   "volt": { "branch": "main", "commit": "1a7d6b1dfb2f176715ccc9e838be32d044f8a734" },
   "which-key.nvim": { "branch": "main", "commit": "6cebd86917df559a88de0f806b2989799c6e6423" }

@@ -18,5 +18,8 @@ return {
 			timeout_ms = 1600,
 			lsp_fallback = true,
 		},
+		linters_by_ft = {
+			typescript = { 'eslint_d' },
+		},
 	},
 }

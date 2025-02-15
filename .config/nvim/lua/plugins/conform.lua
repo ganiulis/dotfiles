@@ -11,7 +11,7 @@ return {
 			markdown = { 'prettier', 'markdownfmt' },
 			terraform = { 'terraform_fmt' },
 			typescript = { 'prettier' },
-			yaml = { 'yamlfmt' },
+			-- yaml = { 'yamlfmt' }, breaks Helm chart rendering
 			python = { 'isort', 'black' },
 		},
 		format_on_save = {

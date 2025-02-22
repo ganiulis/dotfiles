@@ -191,7 +191,7 @@ return {
         "flake8",
         "glow", -- Render markdown on the CLI
         "marksman",
-        "markdownlint",
+        "prettier"
       },
     },
   },

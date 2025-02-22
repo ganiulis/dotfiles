@@ -4,20 +4,28 @@ return {
     enabled = false,
   },
   {
-    'folke/snacks.nvim',
+    'neovim/nvim-lspconfig',
+    enabled = false,
+  },
+  {
+    'williamboman/mason-lspconfig.nvim',
+    enabled = false,
+  },
+  {
+    'neovim/nvim-lspconfig',
+    enabled = false,
+  },
+  {
+    'folke/persistence.nvim',
+    enabled = false,
+  },
+  {
+    'williamboman/mason.nvim',
     opts = {
-      explorer = {
-        -- your explorer configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      },
-      picker = {
-        sources = {
-          explorer = {
-            -- your explorer picker configuration comes here
-            -- or leave it empty to use the default settings
-          },
-        },
+      ensure_installed = {
+        'stylua',
+        'marksman',
+        'prettier',
       },
     },
   },

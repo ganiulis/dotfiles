@@ -9,8 +9,5 @@ if test -d ~/.local/go
     set -Ux GOPATH ~/.local/go
 end
 
-# Prints cow wisdom
-#if type -q cowsay 
-#  and type -q fortune
-#  command fortune | cowsay
-#end
+# Current default Neovim configuration
+set -Ux NVIM_APPNAME nvim-nvchad

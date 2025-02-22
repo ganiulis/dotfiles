@@ -8,10 +8,9 @@ return {
 			css = { 'prettier' },
 			scss = { 'prettier' },
 			html = { 'prettier' },
-			markdown = { 'prettier', 'markdownfmt' },
+			markdown = { 'prettier' },
 			terraform = { 'terraform_fmt' },
 			typescript = { 'prettier' },
-			yaml = { 'helm-ls' },
 			python = { 'isort', 'black' },
 		},
 		format_on_save = {

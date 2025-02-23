@@ -1,28 +1,26 @@
 return {
 	{
 		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
+		config = function(_, opts)
+			require("mason").setup(opts)
 		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("mason-lspconfig").setup()
+		config = function(_, opts)
+			require("mason-lspconfig").setup(opts)
 		end,
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		config = function()
-			require("mason-tool-installer").setup({
-				ensure_installed = {
-					"lua-language-server",
-					"marksman",
-					"prettier",
-					"shellcheck",
-					"stylua",
-				},
-			})
-		end,
+		opts = {
+			ensure_installed = {
+				"lua-language-server",
+				"marksman",
+				"prettier",
+				"shellcheck",
+				"stylua",
+			},
+		},
 	},
 }

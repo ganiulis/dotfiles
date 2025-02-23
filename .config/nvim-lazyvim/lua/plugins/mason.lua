@@ -1,14 +1,28 @@
 return {
-	-- LSP package manager.
-	-- See https://github.com/williamboman/mason.nvim.
-	"williamboman/mason.nvim",
-	opts = {
-		automatic_installation = true,
-		ensure_installed = {
-			"prettier",
-		},
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
 	},
-	config = function(_, opts)
-		require("mason").setup(opts)
-	end,
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("mason-lspconfig").setup()
+		end,
+	},
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		config = function()
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					"lua-language-server",
+					"marksman",
+					"prettier",
+					"shellcheck",
+					"stylua",
+				},
+			})
+		end,
+	},
 }

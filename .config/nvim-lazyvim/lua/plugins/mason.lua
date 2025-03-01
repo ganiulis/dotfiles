@@ -1,5 +1,6 @@
 return {
 	{
+		-- LSP binary manager.
 		"williamboman/mason.nvim",
 		---@param opts MasonSettings
 		config = function(_, opts)
@@ -14,7 +15,12 @@ return {
 		end,
 	},
 	{
+		-- Installs LSPs automatically.
+		-- Depends on mason.nvim
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		dependencies = {
+			"williamboman/mason.nvim",
+		},
 		opts = {
 			-- Don't forget to run MasonToolsClean from time to time to remove unlisted packages.
 			ensure_installed = {

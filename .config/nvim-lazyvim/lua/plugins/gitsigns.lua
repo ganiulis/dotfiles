@@ -52,4 +52,7 @@ return {
 			col = 1,
 		},
 	},
+	config = function(_, opts)
+		require("gitsigns").setup(opts)
+	end,
 }

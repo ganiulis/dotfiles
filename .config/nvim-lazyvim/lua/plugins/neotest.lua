@@ -1,3 +1,4 @@
+return {}
 -- return {
 -- 	-- Runs unit tests for various languages.
 -- 	-- See https://github.com/nvim-neotest/neotest.

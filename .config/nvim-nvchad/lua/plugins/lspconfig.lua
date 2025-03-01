@@ -5,7 +5,6 @@ return {
 	},
 	config = function()
 		local lspconfig = require('lspconfig')
-		local mason_lspconfig = require('mason-lspconfig')
 		local on_attach = function(_, bufnr)
 			local map = function(keys, func, desc)
 				if desc then desc = 'LSP: ' .. desc end
@@ -41,7 +40,7 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-		mason_lspconfig.setup_handlers({
+		require('mason-lspconfig').setup_handlers({
 			function(server_name)
 				lspconfig[server_name].setup({
 					on_attach = on_attach,

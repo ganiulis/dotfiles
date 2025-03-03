@@ -10,4 +10,4 @@ if test -d ~/.local/go
 end
 
 # Current default Neovim configuration
-set -Ux NVIM_APPNAME nvim-nvchad
+set -Ux NVIM_APPNAME nvim-lazyvim

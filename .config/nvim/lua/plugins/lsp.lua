@@ -9,7 +9,10 @@ return {
     local lsp_config = require("lspconfig")
     local mason_lspconfig = require("mason-lspconfig")
     local telescope_builtin = require("telescope.builtin")
-    local on_attach = function(_, bufnr)
+    local on_attach = function(client, bufnr)
+      vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
+      if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true) end
+
       local map = function(keys, func, desc)
         if desc then desc = "(LSP) " .. desc end
         vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
@@ -101,15 +104,6 @@ return {
             Lua = {},
           },
         })
-      end,
-    })
-
-    vim.api.nvim_create_autocmd("LspAttach", {
-      -- See https://neovim.io/doc/user/autocmd.html#autocmd-groups.
-      group = vim.api.nvim_create_augroup("MyLspConfig", {}),
-      callback = function(event)
-        local client = vim.lsp.get_client_by_id(event.data.client_id)
-        if client ~= nil and client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true) end
       end,
     })
   end,

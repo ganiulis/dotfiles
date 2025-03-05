@@ -26,14 +26,4 @@ return {
     },
     config = function(_, opts) require("nvim-treesitter.configs").setup(opts) end,
   },
-  -- {
-  --   -- Incremental selection/deselection of text.
-  --   -- See https://github.com/SUSTech-data/wildfire.nvim.
-  --   "sustech-data/wildfire.nvim",
-  --   event = "VeryLazy",
-  --   dependencies = {
-  --     "nvim-treesitter/nvim-treesitter",
-  --   },
-  --   config = function(_, opts) require("wildfire").setup(opts) end,
-  -- },
 }

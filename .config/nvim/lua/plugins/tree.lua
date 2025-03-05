@@ -16,6 +16,17 @@ return {
     },
   },
   config = function(_, opts)
+    vim.keymap.set("n", "<leader>e", function()
+      if vim.bo.filetype == "NvimTree" then
+        vim.cmd("wincmd p")
+      else
+        require("nvim-tree.api").tree.find_file({ open = true, focus = true })
+      end
+    end, {
+      noremap = true,
+      silent = true,
+      desc = "(NvimTree) Switch between the currently opened file or the file explorer",
+    })
     vim.keymap.set(
       "n",
       "<C-n>",
@@ -27,12 +38,6 @@ return {
       "<C-c>",
       ":NvimTreeCollapse<CR>",
       { noremap = true, silent = true, desc = "(NvimTree) Collapse file explorer" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>e",
-      ":NvimTreeFindFile<CR>",
-      { noremap = true, silent = true, desc = "(NvimTree) Find the current file in the file explorer" }
     )
     require("nvim-tree").setup(opts)
   end,

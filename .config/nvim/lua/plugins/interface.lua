@@ -10,7 +10,7 @@ return {
     end,
   },
   {
-    -- Status line
+    -- Status line.
     -- See https://github.com/nvim-lualine/lualine.nvim.
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -33,7 +33,7 @@ return {
     config = function(_, opts) require("render-markdown").setup(opts) end,
   },
   {
-    -- Shows git changes in the gutter
+    -- Shows git status in the gutter.
     -- Opts are taken directly from https://github.com/lewis6991/gitsigns.nvim.
     "lewis6991/gitsigns.nvim",
     opts = {

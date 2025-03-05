@@ -20,25 +20,25 @@ return {
 			"n",
 			"<C-n>",
 			":NvimTreeToggle<CR>",
-			{ noremap = true, silent = true, desc = "(NvimTree) Toggle directory tree" }
+			{ noremap = true, silent = true, desc = "(NvimTree) Toggle file explorer" }
 		)
 		vim.keymap.set(
 			"n",
 			"<C-c>",
 			":NvimTreeCollapse<CR>",
-			{ noremap = true, silent = true, desc = "(NvimTree) Collapse directory tree" }
+			{ noremap = true, silent = true, desc = "(NvimTree) Collapse file explorer" }
 		)
 		vim.keymap.set(
 			"n",
 			"<leader>e",
 			":NvimTreeFocus<CR>",
-			{ noremap = true, silent = true, desc = "(NvimTeee) Focus on the directory tree" }
+			{ noremap = true, silent = true, desc = "(NvimTeee) Focus on the file explorer" }
 		)
 		vim.keymap.set(
 			"n",
 			"<leader>fe",
 			":NvimTreeFindFile<CR>",
-			{ noremap = true, silent = true, desc = "(NvimTree) Focus on the current file in the directory tree" }
+			{ noremap = true, silent = true, desc = "(NvimTree) Find the current file in the file explorer" }
 		)
 		require("nvim-tree").setup(opts)
 	end,

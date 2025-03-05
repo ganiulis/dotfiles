@@ -19,7 +19,7 @@ return {
 		vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 		vim.keymap.set("n", "<C-c>", ":NvimTreeCollapse<CR>", { noremap = true, silent = true })
 		vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
-		vim.keymap.set("n", "<leader>f", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
+		vim.keymap.set("n", "<leader>fe", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
 		-- vim.api.nvim_create_autocmd({ "VimEnter" }, {
 		-- 	callback = function()
 		-- 		require("nvim-tree.api").tree.open()

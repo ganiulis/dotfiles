@@ -20,7 +20,7 @@ return {
     opts = {
       -- Don't forget to run MasonToolsClean from time to time to remove unlisted packages.
       ensure_installed = {
-        -- "gopls", add it back once neotest is figured out.
+        "gopls",
         "lua-language-server",
         "marksman",
         "prettier",

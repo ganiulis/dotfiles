@@ -9,32 +9,32 @@ return {
 		local mason_lspconfig = require("mason-lspconfig")
 		local on_attach = function(_, bufnr)
 			local map = function(keys, func, desc)
-				if desc then desc = "LSP: " .. desc end
+				if desc then desc = "[LSP] " .. desc end
 				vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
 			end
 
-			map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-			map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-			map("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-			map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-			map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-			map("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-			map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-			map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+			map("<leader>rn", vim.lsp.buf.rename, "[r]e[n]ame")
+			map("<leader>ca", vim.lsp.buf.code_action, "[c]ode [a]ction")
+			map("gd", vim.lsp.buf.definition, "[g]o to [d]efinition")
+			map("gr", require("telescope.builtin").lsp_references, "[g]o to [r]eferences")
+			map("gI", require("telescope.builtin").lsp_implementations, "[g]oto [I]mplementation")
+			map("<leader>D", vim.lsp.buf.type_definition, "[D]efinition")
+			map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[d]ocument [s]ymbols")
+			map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[w]orkspace [s]ymbols")
 			-- See `:help K` for why this keymap
 			map("K", vim.lsp.buf.hover, "Hover Documentation")
 			map("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
-			map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-			map("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
-			map("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
+			map("gD", vim.lsp.buf.declaration, "[g]o to [d]eclaration")
+			map("<leader>wa", vim.lsp.buf.add_workspace_folder, "[w]orkspace [a]dd dir")
+			map("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[w]orkspace [r]emove dir")
 			map(
 				"<leader>wl",
 				function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
-				"[W]orkspace [L]ist Folders"
+				"[w]orkspace [l]ist dirs"
 			)
 
 			vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_) vim.lsp.buf.format() end, {
-				desc = "Format current buffer with LSP",
+				desc = "Format current buffer",
 			})
 		end
 

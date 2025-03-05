@@ -25,7 +25,7 @@ return {
     end, {
       noremap = true,
       silent = true,
-      desc = "(NvimTree) Switch between the currently opened file or the file explorer",
+      desc = "(NvimTree) Switch between the opened file or the file explorer",
     })
     vim.keymap.set(
       "n",

@@ -31,12 +31,6 @@ return {
     vim.keymap.set(
       "n",
       "<leader>e",
-      ":NvimTreeFocus<CR>",
-      { noremap = true, silent = true, desc = "(NvimTeee) Focus on the file explorer" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>fe",
       ":NvimTreeFindFile<CR>",
       { noremap = true, silent = true, desc = "(NvimTree) Find the current file in the file explorer" }
     )

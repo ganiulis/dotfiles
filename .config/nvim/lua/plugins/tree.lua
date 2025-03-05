@@ -16,10 +16,30 @@ return {
 		},
 	},
 	config = function(_, opts)
-		vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-		vim.keymap.set("n", "<C-c>", ":NvimTreeCollapse<CR>", { noremap = true, silent = true })
-		vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
-		vim.keymap.set("n", "<leader>fe", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
+		vim.keymap.set(
+			"n",
+			"<C-n>",
+			":NvimTreeToggle<CR>",
+			{ noremap = true, silent = true, desc = "(NvimTree) Toggle directory tree" }
+		)
+		vim.keymap.set(
+			"n",
+			"<C-c>",
+			":NvimTreeCollapse<CR>",
+			{ noremap = true, silent = true, desc = "(NvimTree) Collapse directory tree" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>e",
+			":NvimTreeFocus<CR>",
+			{ noremap = true, silent = true, desc = "(NvimTeee) Focus on the directory tree" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>fe",
+			":NvimTreeFindFile<CR>",
+			{ noremap = true, silent = true, desc = "(NvimTree) Focus on the current file in the directory tree" }
+		)
 		-- vim.api.nvim_create_autocmd({ "VimEnter" }, {
 		-- 	callback = function()
 		-- 		require("nvim-tree.api").tree.open()

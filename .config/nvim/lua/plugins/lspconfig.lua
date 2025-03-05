@@ -8,20 +8,20 @@ return {
   config = function()
     local lsp_config = require("lspconfig")
     local mason_lspconfig = require("mason-lspconfig")
+    local telescope_builtin = require("telescope.builtin")
     local on_attach = function(_, bufnr)
       local map = function(keys, func, desc)
         if desc then desc = "(LSP) " .. desc end
         vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
       end
-
       map("<leader>rn", vim.lsp.buf.rename, "[r]e[n]ame")
       map("<leader>ca", vim.lsp.buf.code_action, "[c]ode [a]ction")
       map("gd", vim.lsp.buf.definition, "[g]o to [d]efinition")
-      map("gr", require("telescope.builtin").lsp_references, "[g]o to [r]eferences")
-      map("gI", require("telescope.builtin").lsp_implementations, "[g]oto [I]mplementation")
+      map("gr", telescope_builtin.lsp_references, "[g]o to [r]eferences")
+      map("gI", telescope_builtin.lsp_implementations, "[g]oto [I]mplementation")
       map("<leader>D", vim.lsp.buf.type_definition, "[D]efinition")
-      map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[d]ocument [s]ymbols")
-      map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[w]orkspace [s]ymbols")
+      map("<leader>ds", telescope_builtin.lsp_document_symbols, "[d]ocument [s]ymbols")
+      map("<leader>ws", telescope_builtin.lsp_dynamic_workspace_symbols, "[w]orkspace [s]ymbols")
       -- See `:help K` for why this keymap
       map("K", vim.lsp.buf.hover, "Hover Documentation")
       map("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")

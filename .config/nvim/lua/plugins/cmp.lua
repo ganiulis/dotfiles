@@ -15,8 +15,8 @@ return {
 		cmp.setup({
 			snippet = {
 				expand = function(args)
-					vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-					vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+					vim.fn["vsnip#anonymous"](args.body)
+					vim.snippet.expand(args.body)
 				end,
 			},
 			window = {

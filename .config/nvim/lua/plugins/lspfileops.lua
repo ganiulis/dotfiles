@@ -23,7 +23,5 @@ return {
 		-- how long to wait (in milliseconds) for file rename information before cancelling
 		timeout_ms = 10000,
 	},
-	config = function(_, opts)
-		require("lsp-file-operations").setup(opts)
-	end,
+	config = function(_, opts) require("lsp-file-operations").setup(opts) end,
 }

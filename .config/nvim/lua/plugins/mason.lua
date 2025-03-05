@@ -3,16 +3,12 @@ return {
 		-- LSP binary manager.
 		"williamboman/mason.nvim",
 		---@param opts MasonSettings
-		config = function(_, opts)
-			require("mason").setup(opts)
-		end,
+		config = function(_, opts) require("mason").setup(opts) end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		---@param opts MasonLspconfigSettings
-		config = function(_, opts)
-			require("mason-lspconfig").setup(opts)
-		end,
+		config = function(_, opts) require("mason-lspconfig").setup(opts) end,
 	},
 	{
 		-- Installs LSPs automatically.
@@ -33,8 +29,6 @@ return {
 			},
 			auto_update = true,
 		},
-		config = function(_, opts)
-			require("mason-tool-installer").setup(opts)
-		end,
+		config = function(_, opts) require("mason-tool-installer").setup(opts) end,
 	},
 }

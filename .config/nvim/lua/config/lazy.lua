@@ -23,7 +23,7 @@ vim.g.maplocalleader = "\\"
 -- This is a good place to setup other settings (vim.opt).
 vim.opt.relativenumber = true
 
--- Allows to access Windows clipboard if in WSL
+-- Allows to access Windows clipboard (WSL)
 if vim.fn.has("wsl") then
   vim.g.clipboard = {
     name = "clip.exe (Copy Only)",

@@ -18,9 +18,9 @@ return {
   config = function(_, opts)
     vim.keymap.set("n", "<leader>e", function()
       if vim.bo.filetype == "NvimTree" then
-        vim.cmd("wincmd p")
+        vim.cmd("wincmd p") -- Jump to the previous buffer, which should be the file explorer
       else
-        require("nvim-tree.api").tree.find_file({ open = true, focus = true })
+        require("nvim-tree.api").tree.find_file({ open = true, focus = true }) -- Focus on the file explorer and open it if it's closed
       end
     end, {
       noremap = true,

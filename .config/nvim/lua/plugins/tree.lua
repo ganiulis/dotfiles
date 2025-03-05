@@ -40,11 +40,6 @@ return {
 			":NvimTreeFindFile<CR>",
 			{ noremap = true, silent = true, desc = "(NvimTree) Focus on the current file in the directory tree" }
 		)
-		-- vim.api.nvim_create_autocmd({ "VimEnter" }, {
-		-- 	callback = function()
-		-- 		require("nvim-tree.api").tree.open()
-		-- 	end,
-		-- })
 		require("nvim-tree").setup(opts)
 	end,
 }

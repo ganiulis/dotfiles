@@ -4,8 +4,8 @@ return {
 	keys = {
 		{
 			"<leader>?",
-			function() require("which-key").show({ global = false }) end,
-			desc = "(WhichKey) Show key mappings",
+			function() require("which-key").show({ global = true }) end,
+			desc = "(WhichKey) Show mapped keys",
 		},
 	},
 }

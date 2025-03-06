@@ -101,7 +101,12 @@ return {
             })
           end,
           settings = {
-            Lua = {},
+            Lua = {
+              -- Do not send telemetry data containing a randomized but unique identifier.
+              telemetry = {
+                enable = false,
+              },
+            },
           },
         })
       end,

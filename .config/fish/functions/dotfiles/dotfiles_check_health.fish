@@ -1,56 +1,57 @@
-function dotfiles_check_health --description 'Health check'
+function dotfiles_check_health --description 'Dotfiles health check'
+    echo ----------------------------------------------------------------------------------------------
     echo 'Critical user tools'
-    check_for_cmd fish \
+    internal_check_for_cmd fish \
         'fish      (Shell) found at                          ' \
         'fish      (Shell) is missing. How??? Visit https://fishshell.com' \
         -v
-    check_for_cmd nvim \
+    internal_check_for_cmd nvim \
         'nvim      (Neovim) found at                         ' \
         'nvim      (Neovim) is missing. Visit https://neovim.io'
 
     echo
     echo 'Programming languages'
-    check_for_cmd go \
+    internal_check_for_cmd go \
         'go        (Programming language) found at           ' \
         'go        (Programming language) is missing. Visit https://go.dev' \
         version
-    check_for_cmd node \
+    internal_check_for_cmd node \
         'node      (JavaScript runtime environment) found at ' \
         'node      (JavaScript runtime environment) is missing. Visit https://nodejs.org' \
         -v
 
     echo
     echo 'Package managers'
-    check_for_cmd npm \
+    internal_check_for_cmd npm \
         'npm       (Node package manager) found at           ' \
         'npm       (Node package manager) is missing. Visit https://www.npmjs.com' \
         -v
 
     echo
     echo 'DevOps toolkit'
-    check_for_cmd argocd \
+    internal_check_for_cmd argocd \
         'argocd    (ArgoCD) found at                         ' \
         'argocd    (ArgoCD) is missing. Visit https://argoproj.github.io. Place it in ~/.local/bin'
-    check_for_cmd kubectl \
+    internal_check_for_cmd kubectl \
         'kubectl   (Kubernetes CLI) found at                 ' \
         'kubectl   (Kubernetes CLI) is missing. Visit https://kubernetes.io. Place it in ~/.local/bin'
-    check_for_cmd terraform \
+    internal_check_for_cmd terraform \
         'terraform (Terraform CLI) found at                  ' \
         'terraform (Terraform CLI) is missing. Visit https://kubernetes.io. Place it in ~/.local/bin'
 
     echo
     echo 'Other tools'
-    check_against_cmd nano
-    check_against_cmd vim
+    internal_check_against_cmd nano
+    internal_check_against_cmd vim
 
-    echo
+    echo ----------------------------------------------------------------------------------------------
     set_color blue
     echo 'What\'s next?'
     set_color normal
     echo '	Check your Neovim configuration with \':checkhealth\' and \':Lazy sync\''
 end
 
-function check_for_cmd
+function internal_check_for_cmd
     if type -q $argv[1]
         set_color green
         echo -n '	'$argv[2](which $argv[1])
@@ -65,7 +66,7 @@ function check_for_cmd
     set_color normal
 end
 
-function check_against_cmd
+function internal_check_against_cmd
     if not type -q $argv[1]
         set_color green
         echo '	'$argv[1]' is missing. Let\'s keep it that way'

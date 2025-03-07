@@ -1,78 +1,100 @@
 function dotfiles_check_health --description 'Dotfiles health check'
+    set_color magenta
     echo ----------------------------------------------------------------------------------------------
-    echo 'Critical user tools'
+    set_color normal
+    echo 'Common terminal tools'
     internal_check_for_cmd fish \
-        'fish      (Shell) found at                          ' \
-        'fish      (Shell) is missing. How??? Visit https://fishshell.com' \
+        'fish      (Friendly Interactive Shell)     ' \
+        'fish      (Friendly Interactive Shell)     Visit https://fishshell.com' \
         -v
     internal_check_for_cmd nvim \
-        'nvim      (Neovim) found at                         ' \
-        'nvim      (Neovim) is missing. Visit https://neovim.io'
+        'nvim      (Neovim)                         ' \
+        'nvim      (Neovim)                    	    Visit https://neovim.io'
 
     echo
     echo 'Programming languages'
     internal_check_for_cmd go \
-        'go        (Programming language) found at           ' \
-        'go        (Programming language) is missing. Visit https://go.dev' \
+        'go        (Programming language)           ' \
+        'go        (Programming language)           Visit https://go.dev' \
         version
+    internal_check_for_cmd python3 \
+        'python3    (Programming language)          ' \
+        'python3    (Programming language)          Visit https://www.python.org/' \
+        -V
+
+    echo
+    echo 'JavaScript dependencies'
     internal_check_for_cmd node \
-        'node      (JavaScript runtime environment) found at ' \
-        'node      (JavaScript runtime environment) is missing. Visit https://nodejs.org' \
+        'node      (JavaScript runtime environment) ' \
+        'node      (JavaScript runtime environment) Visit https://nodejs.org' \
         -v
-
-    echo
-    echo 'Package managers'
     internal_check_for_cmd npm \
-        'npm       (Node package manager) found at           ' \
-        'npm       (Node package manager) is missing. Visit https://www.npmjs.com' \
+        'npm       (Node.js package manager)        ' \
+        'npm       (Node.js package manager)        Visit https://www.npmjs.com' \
         -v
 
     echo
-    echo 'DevOps toolkit'
+    echo 'DevOps command line tools (CLTs)'
     internal_check_for_cmd argocd \
-        'argocd    (ArgoCD) found at                         ' \
-        'argocd    (ArgoCD) is missing. Visit https://argoproj.github.io. Place it in ~/.local/bin'
+        'argocd    (ArgoCD GitOps CLT)              ' \
+        'argocd    (ArgoCD GitOps CLT)              Visit https://argoproj.github.io. Place it in ~/.local/bin'
     internal_check_for_cmd kubectl \
-        'kubectl   (Kubernetes CLI) found at                 ' \
-        'kubectl   (Kubernetes CLI) is missing. Visit https://kubernetes.io. Place it in ~/.local/bin'
+        'kubectl   (Kubernetes CLT)                 ' \
+        'kubectl   (Kubernetes CLT)                 Visit https://kubernetes.io. Place it in ~/.local/bin'
     internal_check_for_cmd terraform \
-        'terraform (Terraform CLI) found at                  ' \
-        'terraform (Terraform CLI) is missing. Visit https://kubernetes.io. Place it in ~/.local/bin'
+        'terraform (Terraform CLT)                  ' \
+        'terraform (Terraform CLT)                  Visit https://kubernetes.io. Place it in ~/.local/bin'
 
     echo
     echo 'Other tools'
     internal_check_against_cmd nano
     internal_check_against_cmd vim
 
+    set_color magenta
     echo ----------------------------------------------------------------------------------------------
-    set_color blue
-    echo 'What\'s next?'
     set_color normal
-    echo '	Check your Neovim configuration with \':checkhealth\' and \':Lazy sync\''
+    echo 'What\'s next?'
+    echo '	1. Check your Neovim configuration with `:checkhealth` and `:Lazy sync`'
+    echo '	2. Install LSPs with `:MasonToolsInstall`'
 end
 
 function internal_check_for_cmd
     if type -q $argv[1]
         set_color green
-        echo -n '	'$argv[2](which $argv[1])
+        echo -n '	OK '
+        set_color normal
+        echo -n $argv[2]
+        set_color blue
+        echo -n (which $argv[1])
         if count $argv[4] >/dev/null
+            set_color -d blue
             echo -n ' ('($argv[1] $argv[4])')'
         end
+        set_color normal
         echo
     else
         set_color red
-        echo '	'$argv[3]
+        echo -n '     Error '
+        set_color normal
+        echo $argv[3]
     end
-    set_color normal
 end
 
 function internal_check_against_cmd
     if not type -q $argv[1]
         set_color green
-        echo '	'$argv[1]' is missing. Let\'s keep it that way'
+        echo -n '   Missing '
+        set_color normal
+        echo $argv[1]'. Let\'s keep it that way'
     else
         set_color red
-        echo '	'$argv[1]' found at'(which $argv[1])' which should be removed'
+        echo -n '     Found '
+        set_color normal
+        echo -n $argv[1]' at '
+        set_color blue
+        echo -n (which $argv[1])
+        set_color normal
+        echo ' which should be removed'
     end
     set_color normal
 end

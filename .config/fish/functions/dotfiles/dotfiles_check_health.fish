@@ -34,7 +34,7 @@ function dotfiles_check_health --description 'Dotfiles health check'
         -v
 
     echo
-    echo 'DevOps command line tools (CLTs)'
+    echo 'DevOps command line tools'
     internal_check_for_cmd argocd \
         'argocd    (ArgoCD GitOps CLT)              ' \
         'argocd    (ArgoCD GitOps CLT)              Visit https://argoproj.github.io. Place it in ~/.local/bin'

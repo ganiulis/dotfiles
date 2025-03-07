@@ -2,14 +2,14 @@ function dotfiles_check_health --description 'Dotfiles health check'
     set_color magenta
     echo ----------------------------------------------------------------------------------------------
     set_color normal
-    echo 'Common terminal tools'
+    echo 'Common command line tools'
     internal_check_for_cmd fish \
         'fish      (Friendly Interactive Shell)     ' \
         'fish      (Friendly Interactive Shell)     Visit https://fishshell.com' \
         -v
     internal_check_for_cmd nvim \
-        'nvim      (Neovim)                         ' \
-        'nvim      (Neovim)                    	    Visit https://neovim.io'
+        'nvim      (Neovim text editor)             ' \
+        'nvim      (Neovim text editor)             Visit https://neovim.io'
 
     echo
     echo 'Programming languages'
@@ -18,8 +18,8 @@ function dotfiles_check_health --description 'Dotfiles health check'
         'go        (Programming language)           Visit https://go.dev' \
         version
     internal_check_for_cmd python3 \
-        'python3    (Programming language)          ' \
-        'python3    (Programming language)          Visit https://www.python.org/' \
+        'python3   (Programming language)           ' \
+        'python3   (Programming language)           Visit https://www.python.org/' \
         -V
 
     echo
@@ -49,6 +49,68 @@ function dotfiles_check_health --description 'Dotfiles health check'
     echo 'Other tools'
     internal_check_against_cmd nano
     internal_check_against_cmd vim
+
+    echo
+    echo 'Configuration files'
+    if test -e ~/.aws/config
+        set_color green
+        echo -n '	OK '
+        set_color normal
+        echo -n 'AWS config                                 '
+        set_color blue
+        echo ~/.aws/config
+        set_color normal
+    else
+        set_color red
+        echo -n '     Error '
+        set_color normal
+        echo 'AWS config is missing'
+    end
+
+    if test -e ~/.aws/credentials
+        set_color green
+        echo -n '	OK '
+        set_color normal
+        echo -n 'AWS credentials                            '
+        set_color blue
+        echo ~/.aws/credentials
+        set_color normal
+    else
+        set_color red
+        echo -n '     Error '
+        set_color normal
+        echo 'AWS credentials is missing'
+    end
+
+    if test -e ~/.gitconfig
+        set_color green
+        echo -n '	OK '
+        set_color normal
+        echo -n 'git config                                 '
+        set_color blue
+        echo ~/.gitconfig
+        set_color normal
+    else
+        set_color red
+        echo -n '     Error '
+        set_color normal
+        echo 'git config is missing'
+    end
+
+    if test -e ~/.kube/config
+        set_color green
+        echo -n '	OK '
+        set_color normal
+        echo -n 'kubeconfig                                 '
+        set_color blue
+        echo ~/.kube/config
+        set_color normal
+    else
+        set_color red
+        echo -n '     Error '
+        set_color normal
+        echo 'kubeconfig is missing'
+    end
 
     set_color magenta
     echo ----------------------------------------------------------------------------------------------

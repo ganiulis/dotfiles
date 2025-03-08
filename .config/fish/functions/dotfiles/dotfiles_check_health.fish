@@ -77,7 +77,9 @@ function dotfiles_check_health --description 'Dotfiles health check'
     internal_check_file .gitconfig \
         'git config                               '
     internal_check_file .kube/config \
-        'kubeconfig                               '
+        'Kubernetes config                        '
+    internal_check_file .ssh/config \
+        'OpenSSH config                           '
 
     set_color magenta
     echo ----------------------------------------------------------------------------------------------

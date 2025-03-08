@@ -130,9 +130,7 @@ function internal_check_file
         echo -n '     Error '
         set_color normal
         echo -n $argv[2]
-        set_color red
         echo -n 'Missing '
-        set_color magenta
         echo -n ~
         echo /$argv[1]
     end

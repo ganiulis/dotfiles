@@ -44,7 +44,7 @@ function dotfiles_check_health --description 'Dotfiles health check'
         -v
     internal_check_for_cmd npm \
         'npm       (Node.js package manager)              ' \
-        'npm       (Node.js package manager)        Visit https://www.npmjs.com' \
+        'npm       (Node.js package manager)  Install via `nvm install latest`' \
         -v
     internal_check_for_cmd nvm \
         'nvm       (Node.js version manager)              ' \

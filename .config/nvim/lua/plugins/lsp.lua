@@ -3,15 +3,21 @@ return {
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "hrsh7th/nvim-cmp",
+    -- Inline hints for parameters.
+    -- See https://github.com/ray-x/lsp_signature.nvim.
+    "ray-x/lsp_signature.nvim",
+    -- This does not work. Need some time to debug it.
     -- "antosha417/nvim-lsp-file-operations",
   },
   config = function()
     local lsp_config = require("lspconfig")
     local mason_lspconfig = require("mason-lspconfig")
     local telescope_builtin = require("telescope.builtin")
+    local lsp_signature = require("lsp_signature")
     local on_attach = function(client, bufnr)
       vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
       if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true) end
+      lsp_signature.on_attach({}, bufnr)
 
       local map = function(keys, func, desc)
         if desc then desc = "(LSP) " .. desc end

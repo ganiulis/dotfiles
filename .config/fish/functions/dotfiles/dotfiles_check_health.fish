@@ -2,17 +2,24 @@ function dotfiles_check_health --description 'Dotfiles health check'
     set_color magenta
     echo ----------------------------------------------------------------------------------------------
     set_color normal
-    echo 'Common command line tools'
+    echo 'Fish shell dependencies'
     internal_check_for_cmd fish \
         'fish      (Friendly Interactive Shell)           ' \
         'fish      (Friendly Interactive Shell)     Visit https://fishshell.com' \
         -v
+    internal_check_for_cmd fisher \
+        'fisher    (Plugin manager for Fish)              ' \
+        'fisher    (Plugin manager for Fish)        Visit https://github.com/jorgebucaran/fisher' \
+        -v
+
+    echo
+    echo 'Common command line tools'
     internal_check_for_cmd nvim \
         'nvim      (Neovim text editor)                   ' \
         'nvim      (Neovim text editor)             Visit https://neovim.io'
 
     echo
-    echo 'Programming language related'
+    echo 'Programming languages and compilers'
     internal_check_for_cmd gcc \
         'gcc       (C compiler)                           ' \
         'gcc       (C compiler)                     Visit https://gcc.gnu.org'
@@ -39,17 +46,21 @@ function dotfiles_check_health --description 'Dotfiles health check'
         'npm       (Node.js package manager)              ' \
         'npm       (Node.js package manager)        Visit https://www.npmjs.com' \
         -v
+    internal_check_for_cmd nvm \
+        'nvm       (Node.js version manager)              ' \
+        'nvm       (Node.js version manager)        Visit https://github.com/jorgebucaran/nvm.fish' \
+        -v
 
     echo
     echo 'DevOps command line tools'
     internal_check_for_cmd argocd \
-        'argocd    (ArgoCD GitOps CLT)              ' \
+        'argocd    (ArgoCD GitOps CLT)                    ' \
         'argocd    (ArgoCD GitOps CLT)              Visit https://argoproj.github.io. Place it in ~/.local/bin'
     internal_check_for_cmd kubectl \
-        'kubectl   (Kubernetes CLT)                 ' \
+        'kubectl   (Kubernetes CLT)                       ' \
         'kubectl   (Kubernetes CLT)                 Visit https://kubernetes.io. Place it in ~/.local/bin'
     internal_check_for_cmd terraform \
-        'terraform (Terraform CLT)                  ' \
+        'terraform (Terraform CLT)                        ' \
         'terraform (Terraform CLT)                  Visit https://kubernetes.io. Place it in ~/.local/bin'
 
     echo
@@ -83,7 +94,11 @@ function internal_check_for_cmd
         set_color normal
         echo -n $argv[2]
         set_color blue
-        echo -n (which $argv[1])
+        if functions -q $argv[1]
+            echo -n 'Fish function'
+        else
+            echo -n (which $argv[1])
+        end
         if count $argv[4] >/dev/null
             set_color -d blue
             echo -n ' ('($argv[1] $argv[4])')'

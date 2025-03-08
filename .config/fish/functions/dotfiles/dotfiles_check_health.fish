@@ -132,4 +132,3 @@ function internal_check_file
     end
     set_color normal
 end
-if test -

@@ -52,65 +52,14 @@ function dotfiles_check_health --description 'Dotfiles health check'
 
     echo
     echo 'Configuration files'
-    if test -e ~/.aws/config
-        set_color green
-        echo -n '	OK '
-        set_color normal
-        echo -n 'AWS config                                 '
-        set_color blue
-        echo ~/.aws/config
-        set_color normal
-    else
-        set_color red
-        echo -n '     Error '
-        set_color normal
-        echo 'AWS config is missing'
-    end
-
-    if test -e ~/.aws/credentials
-        set_color green
-        echo -n '	OK '
-        set_color normal
-        echo -n 'AWS credentials                            '
-        set_color blue
-        echo ~/.aws/credentials
-        set_color normal
-    else
-        set_color red
-        echo -n '     Error '
-        set_color normal
-        echo 'AWS credentials is missing'
-    end
-
-    if test -e ~/.gitconfig
-        set_color green
-        echo -n '	OK '
-        set_color normal
-        echo -n 'git config                                 '
-        set_color blue
-        echo ~/.gitconfig
-        set_color normal
-    else
-        set_color red
-        echo -n '     Error '
-        set_color normal
-        echo 'git config is missing'
-    end
-
-    if test -e ~/.kube/config
-        set_color green
-        echo -n '	OK '
-        set_color normal
-        echo -n 'kubeconfig                                 '
-        set_color blue
-        echo ~/.kube/config
-        set_color normal
-    else
-        set_color red
-        echo -n '     Error '
-        set_color normal
-        echo 'kubeconfig is missing'
-    end
+    internal_check_file .aws/config \
+        'AWS config                         '
+    internal_check_file .aws/credentials \
+        'AWS credentials                    '
+    internal_check_file .gitconfig \
+        'git config                         '
+    internal_check_file .kube/config \
+        'kubeconfig                         '
 
     set_color magenta
     echo ----------------------------------------------------------------------------------------------
@@ -157,6 +106,29 @@ function internal_check_against_cmd
         echo -n (which $argv[1])
         set_color normal
         echo ' which should be removed'
+    end
+    set_color normal
+end
+
+function internal_check_file
+    if not test -e ~/$argv[1]
+        set_color green
+        echo -n '	OK '
+        set_color normal
+        echo -n $argv[2]
+        set_color blue
+        echo -n '        '
+        echo ~/$argv[1]
+    else
+        set_color red
+        echo -n '     Error '
+        set_color normal
+        echo -n $argv[2]
+        set_color red
+        echo -n 'Missing '
+        set_color magenta
+        echo -n ~
+        echo /$argv[1]
     end
     set_color normal
 end

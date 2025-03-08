@@ -3,7 +3,7 @@
 /.config/*
 !/.config/fish/
 /.config/fish/conf.d/*
-/.config/fish/fish_variables
+/.config/fish/fish_*
 /.config/fish/completions/*.fish
 /.config/fish/functions/*.fish
 !/.config/nvim*/

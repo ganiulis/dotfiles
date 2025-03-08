@@ -13,9 +13,6 @@ function dotfiles_check_health --description 'Dotfiles health check'
 
     echo
     echo 'Programming language related'
-    internal_check_for_cmd clang \
-        'clang     (C compiler alternative)               ' \
-        'clang     (C compiler alternative)         Visit https://clang.llvm.org'
     internal_check_for_cmd gcc \
         'gcc       (C compiler)                           ' \
         'gcc       (C compiler)                     Visit https://gcc.gnu.org'

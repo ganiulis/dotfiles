@@ -22,8 +22,12 @@ function dotfiles_check_health --description 'Dotfiles health check'
         version
     internal_check_for_cmd python3 \
         'python3   (Programming language)                 ' \
-        'python3   (Programming language)           Visit https://www.python.org/' \
+        'python3   (Programming language)           Visit https://www.python.org' \
         -V
+    internal_check_for_cmd lua \
+        'lua       (Programming language)                 ' \
+        'lua       (Programming language)           Visit https://www.lua.org' \
+        -v
 
     echo
     echo 'JavaScript dependencies'

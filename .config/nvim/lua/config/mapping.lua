@@ -9,4 +9,5 @@ vim.keymap.set("n", "<leader>gpc", function()
     vim.api.nvim_exec2(cmd, {})
   end
 end, { desc = "(Custom) [g]it [p]ush [c]onfig" })
-vim.keymap.del("n", "gc")
+vim.keymap.set({ "v" }, "<C-_>", "gc", { remap = true })
+vim.keymap.set({ "n" }, "<C-_>", "gcc<bar>j", { remap = true })

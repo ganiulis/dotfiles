@@ -4,38 +4,38 @@ function dotfiles_check_health --description 'Dotfiles health check'
     set_color normal
     echo 'Common command line tools'
     internal_check_for_cmd fish \
-        'fish      (Friendly Interactive Shell)          ' \
+        'fish      (Friendly Interactive Shell)           ' \
         'fish      (Friendly Interactive Shell)     Visit https://fishshell.com' \
         -v
     internal_check_for_cmd nvim \
-        'nvim      (Neovim text editor)                  ' \
+        'nvim      (Neovim text editor)                   ' \
         'nvim      (Neovim text editor)             Visit https://neovim.io'
 
     echo
     echo 'Programming language related'
     internal_check_for_cmd clang \
-        'clang     (C compiler alternative)              ' \
+        'clang     (C compiler alternative)               ' \
         'clang     (C compiler alternative)         Visit https://clang.llvm.org'
     internal_check_for_cmd gcc \
-        'gcc       (C compiler)                          ' \
+        'gcc       (C compiler)                           ' \
         'gcc       (C compiler)                     Visit https://gcc.gnu.org'
     internal_check_for_cmd go \
-        'go        (Programming language)                ' \
+        'go        (Programming language)                 ' \
         'go        (Programming language)           Visit https://go.dev' \
         version
     internal_check_for_cmd python3 \
-        'python3   (Programming language)                ' \
+        'python3   (Programming language)                 ' \
         'python3   (Programming language)           Visit https://www.python.org/' \
         -V
 
     echo
     echo 'JavaScript dependencies'
     internal_check_for_cmd node \
-        'node      (JavaScript runtime environment)      ' \
+        'node      (JavaScript runtime environment)       ' \
         'node      (JavaScript runtime environment) Visit https://nodejs.org' \
         -v
     internal_check_for_cmd npm \
-        'npm       (Node.js package manager)             ' \
+        'npm       (Node.js package manager)              ' \
         'npm       (Node.js package manager)        Visit https://www.npmjs.com' \
         -v
 

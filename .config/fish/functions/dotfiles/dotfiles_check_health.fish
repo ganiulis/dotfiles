@@ -111,7 +111,7 @@ function internal_check_against_cmd
 end
 
 function internal_check_file
-    if not test -e ~/$argv[1]
+    if test -e ~/$argv[1]
         set_color green
         echo -n '	OK '
         set_color normal
@@ -132,3 +132,4 @@ function internal_check_file
     end
     set_color normal
 end
+if test -

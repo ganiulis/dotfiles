@@ -1,10 +1,13 @@
 return {
+  -- Lightweight but powerful code formatter.
+  -- See https://github.com/stevearc/conform.nvim.
   "stevearc/conform.nvim",
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
       markdown = { "prettier" },
       fish = { "fish_indent" },
+      go = { "gofumpt", "goimports" },
     },
   },
   config = function(_, opts)

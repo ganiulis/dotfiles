@@ -13,19 +13,20 @@ return {
   {
     -- Installs LSPs automatically.
     -- Depends on mason.nvim
+    -- Run `:MasonToolsClean` from time to time to remove unlisted packages.
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     dependencies = {
       "williamboman/mason.nvim",
     },
     opts = {
-      -- Don't forget to run MasonToolsClean from time to time to remove unlisted packages.
       ensure_installed = {
-        "gopls",
-        "lua-language-server",
-        "marksman",
-        "prettier",
-        "shellcheck",
-        "stylua",
+        "gofumpt", -- Go formatter
+        "goimports", -- Go imports formatter
+        "gopls", -- Go LSP
+        "lua-language-server", -- Lua LSP
+        "marksman", -- Markdown LSP
+        "prettier", -- General purpose formatter
+        "stylua", -- Lua formatter
       },
       auto_update = true,
     },

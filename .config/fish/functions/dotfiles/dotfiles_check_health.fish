@@ -88,7 +88,7 @@ function dotfiles_check_health --description 'Dotfiles health check'
 end
 
 function internal_check_for_cmd
-    if type -q $argv[1]
+    if type -q $argv[1]; or functions -q $argv[1]
         set_color green
         echo -n '	OK '
         set_color normal

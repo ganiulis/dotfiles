@@ -59,13 +59,13 @@ function dotfiles_check_health --description 'Dotfiles health check'
     echo
     echo 'Configuration files'
     internal_check_file .aws/config \
-        'AWS config                         '
+        'AWS config                                '
     internal_check_file .aws/credentials \
-        'AWS credentials                    '
+        'AWS credentials                           '
     internal_check_file .gitconfig \
-        'git config                         '
+        'git config                                '
     internal_check_file .kube/config \
-        'kubeconfig                         '
+        'kubeconfig                                '
 
     set_color magenta
     echo ----------------------------------------------------------------------------------------------

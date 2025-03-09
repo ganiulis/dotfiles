@@ -85,6 +85,8 @@ function dotfiles_check_health --description 'Dotfiles health check'
     echo ----------------------------------------------------------------------------------------------
     set_color normal
     echo 'What\'s next?'
-    echo '	1. Check your Neovim configuration with `:checkhealth` and `:Lazy sync`'
-    echo '	2. Install Neovim LSPs with `:MasonToolsInstall` if not done automatically'
+    echo '	1. Update your system with `dotfiles_sysupdate`'
+    echo '	2. Update and install Neovim dependencies with `:Lazy sync`'
+    echo '	3. Install Neovim LSPs and utilities with `:MasonToolsInstall` if not done automatically'
+    echo '	4. Check Neovim configuration with `:checkhealth`'
 end

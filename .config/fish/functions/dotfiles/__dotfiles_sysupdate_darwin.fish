@@ -5,4 +5,5 @@ function __dotfiles_sysupdate_darwin
     end
 
     brew update
+    brew upgrade
 end

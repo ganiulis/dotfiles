@@ -7,5 +7,11 @@ function dotfiles_sysupdate --description 'Update your system'
         return
     end
 
+    if [ Darwin = $my_system ]
+        echo "macOS found, starting updates"
+        __dotfiles_sysupdate_darwin
+        return
+    end
+
     echo "$my_system is currently not supported"
 end

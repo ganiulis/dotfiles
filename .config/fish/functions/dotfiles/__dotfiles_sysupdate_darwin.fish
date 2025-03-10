@@ -1,5 +1,5 @@
 function __dotfiles_sysupdate_darwin
-    if not type -q pacman
+    if not type -q brew
         echo 'Missing brew. Visit https://brew.sh.'
         return
     end

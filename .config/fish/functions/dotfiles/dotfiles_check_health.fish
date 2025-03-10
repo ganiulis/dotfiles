@@ -6,11 +6,12 @@ function dotfiles_check_health --description 'Dotfiles health check'
 
     if [ Darwin = $my_system ]
         set_color normal
-        echo 'Mac dependencies'
+        echo 'macOS dependencies'
         __dotfiles_check_cmd brew \
             'brew      (Homebrew package manager)             ' \
             'brew      (Homebrew package manager)       Visit https://brew.sh' \
             -v
+        echo
     end
 
     set_color normal

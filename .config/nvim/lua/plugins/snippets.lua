@@ -31,8 +31,9 @@ return {
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
-        -- -- Completion on enter is cursed.
-        -- -- See https://github.com/hrsh7th/nvim-cmp/issues/469.
+        -- Completion on enter is cursed.
+        -- See https://github.com/hrsh7th/nvim-cmp/issues/469.
+        -- And also https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#safely-select-entries-with-cr.
         ["<CR>"] = cmp.mapping({
           i = function(fallback)
             if cmp.visible() and cmp.get_active_entry() then

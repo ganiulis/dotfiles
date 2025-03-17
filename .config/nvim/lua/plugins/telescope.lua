@@ -1,6 +1,6 @@
+-- Fancy fuzzy search plugin.
+-- See https://github.com/nvim-telescope/telescope.nvim.
 return {
-  -- Fancy fuzzy search plugin.
-  -- See https://github.com/nvim-telescope/telescope.nvim.
   "nvim-telescope/telescope.nvim",
   tag = "0.1.8",
   dependencies = {

@@ -1,6 +1,6 @@
+-- File explorer with LSP integration.
+-- See https://github.com/nvim-tree/nvim-tree.lua.
 return {
-  -- File explorer with LSP integration.
-  -- See https://github.com/nvim-tree/nvim-tree.lua.
   "nvim-tree/nvim-tree.lua",
   version = "*",
   lazy = false,

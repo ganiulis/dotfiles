@@ -1,6 +1,6 @@
+-- Lightweight but powerful code formatter.
+-- See https://github.com/stevearc/conform.nvim.
 return {
-  -- Lightweight but powerful code formatter.
-  -- See https://github.com/stevearc/conform.nvim.
   "stevearc/conform.nvim",
   opts = {
     formatters_by_ft = {

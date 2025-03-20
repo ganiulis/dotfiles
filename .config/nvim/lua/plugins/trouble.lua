@@ -11,7 +11,7 @@ return {
   cmd = "Trouble",
   keys = {
     {
-      "<C-x>",
+      "<leader>tt",
       "<cmd>Trouble diagnostics toggle<cr>",
       desc = "(Trouble) Open diagnostics buffer",
     },

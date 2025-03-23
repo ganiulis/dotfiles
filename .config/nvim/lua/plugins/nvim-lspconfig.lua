@@ -97,14 +97,11 @@ return {
               runtime = {
                 version = "LuaJIT",
               },
-              library = {
-                vim.env.VIMRUNTIME,
-                "${3rd}/luv/library",
-              },
               workspace = {
                 checkThirdParty = false,
                 library = {
                   vim.env.VIMRUNTIME,
+                  "${3rd}/luv/library",
                 },
               },
             })

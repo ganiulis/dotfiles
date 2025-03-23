@@ -3,17 +3,17 @@ return {
   opts = {
     modes = {
       diagnostics = {
-        auto_close = true, -- auto close when there are no items
-        auto_open = false, -- auto open when there are items
+        auto_close = true,
+        auto_open = false,
       },
     },
   },
   cmd = "Trouble",
   keys = {
     {
-      "<leader>tt",
+      "<leader>td",
       "<cmd>Trouble diagnostics toggle<cr>",
-      desc = "(Trouble) Open diagnostics buffer",
+      desc = "[trouble] Open diagnostics buffer",
     },
     -- {
     -- "<leader>dX",

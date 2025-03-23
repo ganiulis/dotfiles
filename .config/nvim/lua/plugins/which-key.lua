@@ -5,7 +5,7 @@ return {
     {
       "<leader>?",
       function() require("which-key").show({ global = true }) end,
-      desc = "(WhichKey) Show mapped keys",
+      desc = "[which-key] Show shortcuts",
     },
   },
 }

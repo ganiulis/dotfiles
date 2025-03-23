@@ -1,5 +1,3 @@
--- File explorer with LSP integration.
--- See https://github.com/nvim-tree/nvim-tree.lua.
 return {
   "nvim-tree/nvim-tree.lua",
   version = "*",
@@ -7,30 +5,41 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
-  opts = {
-    sort = {
-      sorter = "case_sensitive",
-    },
-    renderer = {
-      group_empty = true,
-    },
-  },
   config = function(_, opts)
-    require("nvim-tree").setup(opts)
-    local map = function(key, func, desc)
-      if desc then desc = "(NvimTree) " .. desc end
-      vim.keymap.set("n", key, func, { noremap = true, silent = true, desc = desc })
-    end
-    map("<leader>e", function()
-      if vim.bo.filetype == "NvimTree" then
-        -- Jump to the previous buffer, which should be the file explorer
-        vim.cmd("wincmd p")
-      else
-        -- Focus on the file explorer and open it if it's closed
-        require("nvim-tree.api").tree.find_file({ open = true, focus = true })
-      end
-    end, "Switch between the opened file or the file explorer")
-    map("<C-n>", ":NvimTreeToggle<CR>", "Toggle file explorer")
-    map("<C-c>", ":NvimTreeCollapse<CR>", "Collapse file explorer")
+    local plugin = "nvim-tree"
+    require(plugin).setup(opts)
+    local map = require("utils.map")(plugin)
+    map({
+      desc = "Focus on file or file explorer",
+      key = "<leader>e",
+      action = function()
+        if vim.bo.filetype == "NvimTree" then
+          vim.cmd("wincmd p")
+        else
+          vim.cmd("NvimTreeFocus")
+        end
+      end,
+    })
+    map({
+      desc = "Focus on file or file in explorer",
+      key = "<leader>f",
+      action = function()
+        if vim.bo.filetype == "NvimTree" then
+          vim.cmd("wincmd p")
+        else
+          require("nvim-tree.api").tree.find_file({ open = true, focus = true })
+        end
+      end,
+    })
+    map({
+      desc = "Toggle file explorer",
+      key = "<C-n>",
+      action = ":NvimTreeToggle<CR>",
+    })
+    map({
+      desc = "Collapse file explorer",
+      key = "<C-c>",
+      action = ":NvimTreeCollapse<CR>",
+    })
   end,
 }

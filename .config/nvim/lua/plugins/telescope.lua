@@ -1,21 +1,31 @@
--- Fancy fuzzy search plugin.
--- See https://github.com/nvim-telescope/telescope.nvim.
 return {
   "nvim-telescope/telescope.nvim",
-  tag = "0.1.8",
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
   config = function(_, opts)
     require("telescope").setup(opts)
+    local map = require("utils.map")("telescope")
     local builtin = require("telescope.builtin")
-    local map = function(key, func, desc)
-      if desc then desc = "(Telescope) " .. desc end
-      vim.keymap.set("n", key, func, { desc = desc })
-    end
-    map("<leader>ff", builtin.find_files, "[f]ind [f]iles")
-    map("<leader>fw", builtin.live_grep, "[f]ind [w]ords")
-    map("<leader>fb", builtin.buffers, "[f]ind [b]uffers")
-    map("<leader>fh", builtin.help_tags, "[f]ind [h]elp")
+    map({
+      desc = "Search for files",
+      key = "<leader>tf",
+      action = builtin.find_files,
+    })
+    map({
+      desc = "Search for words",
+      key = "<leader>tw",
+      action = builtin.live_grep,
+    })
+    map({
+      desc = "Search for buffers",
+      key = "<leader>tb",
+      action = builtin.buffers,
+    })
+    map({
+      desc = "Search help",
+      key = "<leader>th",
+      action = builtin.help_tags,
+    })
   end,
 }

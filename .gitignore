@@ -8,6 +8,6 @@
 /.config/fish/completions/*.fish
 /.config/fish/functions/*.fish
 
-!/.config/nvim/lua/**/*
+!/.config/nvim/lua/**/*.lua
 !/.config/nvim/.stylua.toml
 !/.config/nvim/init.lua

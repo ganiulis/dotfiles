@@ -2,12 +2,15 @@
 !/.config
 /.config/*
 
+# Fish shell
+# https://fishshell.com
 !/.config/fish/
 /.config/fish/conf.d/*
 /.config/fish/fish_*
 /.config/fish/completions/*.fish
 /.config/fish/functions/*.fish
 
-!/.config/nvim/lua/**/*.lua
-!/.config/nvim/.stylua.toml
-!/.config/nvim/init.lua
+# Neovim configuration files
+# https://neovim.io
+!/.config/nvim*
+/.config/nvim*/lazy-lock.json

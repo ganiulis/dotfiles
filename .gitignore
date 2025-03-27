@@ -2,7 +2,7 @@
 !/.config
 /.config/*
 
-# Fish shell
+# Fish shell configuration files
 # https://fishshell.com
 !/.config/fish/
 /.config/fish/conf.d/*
@@ -10,7 +10,8 @@
 /.config/fish/completions/*.fish
 /.config/fish/functions/*.fish
 
-# Neovim configuration files
+# Neovim configuration files except for lazy-lock.json
 # https://neovim.io
+# https://github.com/folke/lazy.nvim
 !/.config/nvim*
 /.config/nvim*/lazy-lock.json

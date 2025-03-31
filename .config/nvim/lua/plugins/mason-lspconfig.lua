@@ -19,13 +19,6 @@ return {
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local lsp_signature = require("lsp_signature")
     local telescope_builtin = require("telescope.builtin")
-    -- lsp_config.util.default_config = vim.tbl_extend("force", lsp_config.util.default_config, {
-    -- 	capabilities = vim.tbl_deep_extend(
-    -- 		"force",
-    -- 		vim.lsp.protocol.make_client_capabilities(),
-    -- 		require("lsp-file-operations").default_capabilities()
-    -- 	),
-    -- })
     local on_attach = function(client, bufnr)
       vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
       if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true) end
@@ -76,6 +69,13 @@ return {
       --   "[w]orkspace [l]ist dirs"
       -- )
     end
+    -- lsp_config.util.default_config = vim.tbl_extend("force", lsp_config.util.default_config, {
+    -- 	capabilities = vim.tbl_deep_extend(
+    -- 		"force",
+    -- 		vim.lsp.protocol.make_client_capabilities(),
+    -- 		require("lsp-file-operations").default_capabilities()
+    -- 	),
+    -- })
     local lspconfig = require("lspconfig")
     require("mason-lspconfig").setup_handlers({
       function(server_name)

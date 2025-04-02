@@ -1,8 +1,5 @@
 return {
   -- {
-  -- 'm4xshen/hardtime.nvim', -- Helps establish good command use and helps quit bad habits
-  -- }
-  -- {
   -- 	-- Runs unit tests for various languages.
   -- 	-- See https://github.com/nvim-neotest/neotest.
   -- 	-- This does not work right now.

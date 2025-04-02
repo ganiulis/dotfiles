@@ -9,5 +9,8 @@ require("lazy").setup({
   checker = {
     enabled = true,
   },
+  rocks = {
+    enabled = false, -- Whether https://luarocks.org is used or not.
+  },
 })
 require("mappings")

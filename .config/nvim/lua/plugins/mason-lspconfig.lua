@@ -41,7 +41,7 @@ return {
       })
       map({
         desc = "Find references",
-        key = "gr",
+        key = "gj",
         action = telescope_builtin.lsp_references,
       })
       map({

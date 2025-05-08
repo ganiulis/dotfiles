@@ -50,8 +50,8 @@ return {
       })
     end
 
-    local lspconfig = require("lspconfig")
-    lspconfig.gopls.setup({
+    local lspconfig = vim.lsp.config
+    lspconfig.gopls = {
       on_attach = on_attach,
       capabilities = capabilities,
       settings = {
@@ -63,8 +63,8 @@ return {
           },
         },
       },
-    })
-    lspconfig.lua_ls.setup({
+    }
+    lspconfig.lua_ls = {
       capabilities = capabilities,
       on_attach = on_attach,
       on_init = function(client)
@@ -97,7 +97,11 @@ return {
           },
         },
       },
-    })
+    }
+    lspconfig.marksman = {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
 
     require("mason").setup()
     require("mason-lspconfig").setup()

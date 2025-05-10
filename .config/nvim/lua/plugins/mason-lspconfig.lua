@@ -13,7 +13,18 @@ return {
     "hrsh7th/cmp-vsnip",
     "hrsh7th/vim-vsnip",
   },
-  config = function()
+  opts = {
+    ensure_installed = {
+      "gofumpt", -- Go formatter
+      "goimports", -- Go imports formatter
+      "gopls", -- Go LSP
+      "lua-language-server", -- Lua LSP
+      "marksman", -- Markdown LSP
+      "prettier", -- General purpose formatter
+      "stylua", -- Lua formatter
+    },
+  },
+  config = function(_, opts)
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local lsp_signature = require("lsp_signature")
     local telescope_builtin = require("telescope.builtin")
@@ -50,8 +61,7 @@ return {
       })
     end
 
-    local lspconfig = vim.lsp.config
-    lspconfig.gopls = {
+    vim.lsp.config.gopls = {
       on_attach = on_attach,
       capabilities = capabilities,
       settings = {
@@ -64,7 +74,7 @@ return {
         },
       },
     }
-    lspconfig.lua_ls = {
+    vim.lsp.config.lua_ls = {
       capabilities = capabilities,
       on_attach = on_attach,
       on_init = function(client)
@@ -98,12 +108,18 @@ return {
         },
       },
     }
-    lspconfig.marksman = {
+    vim.lsp.config.marksman = {
       on_attach = on_attach,
       capabilities = capabilities,
     }
 
     require("mason").setup()
     require("mason-lspconfig").setup()
+
+    vim.api.nvim_create_user_command(
+      "MasonInstallAll",
+      function() vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " ")) end,
+      {}
+    )
   end,
 }
